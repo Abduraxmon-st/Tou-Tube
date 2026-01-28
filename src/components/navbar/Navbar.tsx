@@ -28,7 +28,7 @@ export const Navbar = () => {
       </div>
       <div className="relative border py-1 border-secondColor/10 rounded-tl-[40px] rounded-bl-[40px]">
         <Input
-          ref={inputRef}
+          ref={inputRef}  
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="border-none pr-16 focus-visible:ring-0"
