@@ -5,7 +5,7 @@ export function proxy(req: NextRequest) {
   const url = req.nextUrl.clone();
 
   if (url.pathname === "/") {
-    url.pathname = "/uz";
+    url.pathname = "/en";
     return NextResponse.redirect(url);
   }
 
