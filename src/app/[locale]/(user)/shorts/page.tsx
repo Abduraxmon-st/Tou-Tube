@@ -1,6 +1,6 @@
 const ShortsPage = () => {
   return (
-    <div>ShortsPage</div>
+    <div className="h-500">ShortsPage</div>
   )
 }
 
