@@ -1,24 +1,24 @@
 "use client"
 import { Keyboard, Mic, Search, X } from "lucide-react"
 import { Input } from "../ui/input"
-import { use, useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { Button } from "../ui/button"
 import { VoiceModal } from "../modal"
 
-declare global {
-    interface Window {
-        webkitSpeechRecognition: any;
-    }
-}
+// declare global {
+//     interface Window {
+//         webkitSpeechRecognition: any;
+//     }
+// }
 
 export const SearchMenu = () => {
     const [query, setQuery] = useState("")
     const [open, setOpen] = useState(false);
-    const inputRef = useRef<HTMLInputElement>(null);
+    // const inputRef = useRef<HTMLInputElement>(null);
 
-    const handleKeyboardClick = () => {
-        inputRef.current?.focus();
-    };
+    // const handleKeyboardClick = () => {
+    //     inputRef.current?.focus();
+    // };
     const handleClear = () => {
         setQuery("")
     }
@@ -26,7 +26,7 @@ export const SearchMenu = () => {
         <>
             <div className="flex items-center">
                 <div className="w-135.5 flex">
-                    <div className="relative border border-secondColor/15 rounded-tl-[40px] rounded-bl-[40px] h-10 w-full pl-2">
+                    <div className="relative border border-secondColor/15 border-r-0 rounded-tl-[40px] rounded-bl-[40px] h-10 w-full pl-2">
                         <Input
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
@@ -53,11 +53,11 @@ export const SearchMenu = () => {
                             )}
                         </div>
                     </div>
-                    <div className="border border-l-0 bg-secondColor/8 border-secondColor/15 rounded-tr-[40px] rounded-br-[40px] flex items-center justify-center w-16 h-10">
+                    <div className="border bg-secondColor/8 border-secondColor/8! rounded-r-full flex items-center justify-center w-16 h-10">
                         <Search />
                     </div>
                 </div>
-                <Button type="button" onClick={() => setOpen(true)} className="[&_svg:not([class*='size-'])]:size-6 rounded-full w-10 h-10 bg-secondColor/8 ml-3 hover:bg-secondColor/8"><Mic /></Button>
+                <Button variant="iconVariant" type="button" onClick={() => setOpen(true)} className="bg-secondColor/8"><Mic /></Button>
             </div>
             <VoiceModal
                 open={open}

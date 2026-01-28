@@ -1,8 +1,9 @@
-import { Menu } from "lucide-react"
+"use client"
 import { Logo } from "../logo"
 import { Link } from "@/i18n/navigation"
 import { SearchMenu } from "../search"
 import NavbarRight from "./NavbarRight"
+import { SidebarToggle } from "../toggle"
 
 export const Navbar = () => {
 
@@ -10,9 +11,7 @@ export const Navbar = () => {
     <div className="flex items-center justify-between px-4 max-h-14">
       <div className="flex items-center">
         {/* sidebar menu */}
-        <div className="p-2">
-          <Menu size={24} />
-        </div>
+        <SidebarToggle />
 
         <Link href="/"><Logo className="py-3.5 px-4" /></Link>
       </div>

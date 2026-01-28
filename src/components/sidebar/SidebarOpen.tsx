@@ -20,8 +20,8 @@ export const SidebarOpen = () => {
             <ChevronRight size={16} />
           </div>
 
-          {sidebarSubscriptionsSection.map((item) => (
-            <SidebarLink key={item.label} item={item} />
+          {sidebarSubscriptionsSection.map((item, index) => (
+            <SidebarLink key={item.label + index} item={item} />
           ))}
         </div>
         <Separator />
