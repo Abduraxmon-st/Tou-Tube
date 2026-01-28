@@ -1,5 +1,5 @@
 import { CreativeStudioIcon, ShortsIcon } from "@/assets/icons";
-import { CircleQuestionMark, Clock, Flag, History, Home, ListVideo, MessageSquareWarning, Settings, SquarePlay, ThumbsUp } from "lucide-react";
+import { CircleQuestionMark, CircleUserRound, Clock, Flag, History, Home, ListVideo, MessageSquareWarning, Settings, SquarePlay, ThumbsUp, TvMinimalPlay } from "lucide-react";
 
 export const sidebarLinksSection_1 = [
   {
@@ -94,4 +94,27 @@ export const sidebarLinksSection_3 = [
     path: "/",
     icon: <MessageSquareWarning />
   },
+]
+
+export const sidebarClosedLinks = [
+  {
+    label: "Home",
+    path: "/",
+    icon: <Home />
+  },
+  {
+    label: "Shorts",
+    path: "/shorts",
+    icon: <ShortsIcon />
+  },
+  {
+    label: "Subscriptions",
+    path: "/subscriptions",
+    icon: <TvMinimalPlay className="-scale-x-100 rotate-180" />
+  },
+  {
+    label: "You",
+    path: "/you",
+    icon: <CircleUserRound />
+  }
 ]
