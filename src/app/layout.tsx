@@ -10,7 +10,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Tou tube",
+  title: "TouTube",
   description: "Better than you tube ;)",
 };
 

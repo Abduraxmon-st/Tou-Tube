@@ -1,5 +1,6 @@
 import { Menu } from "lucide-react"
 import { Logo } from "../logo"
+import { Link } from "@/i18n/navigation"
 
 export const Navbar = () => {
   return (
@@ -10,9 +11,8 @@ export const Navbar = () => {
           <Menu size={24} />
         </div>
 
-        <Logo className="py-3.5 px-4" />
+        <Link href="/"><Logo className="py-3.5 px-4" /></Link>
       </div>
-
     </div>
   )
 }
