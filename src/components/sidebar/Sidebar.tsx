@@ -27,6 +27,10 @@ export const Sidebar = () => {
         <Separator />
 
         <div className="p-3">
+          <div className="flex items-center gap-2 px-3 h-10 hover:bg-buttonBgColor rounded-[10px]">
+            <p className="font-semibold">You</p>
+            <ChevronRight size={16} />
+          </div>
           {sidebarLinksSection_2.map((item) => (
             <SidebarLink key={item.label} item={item} />
           ))}
@@ -46,6 +50,25 @@ export const Sidebar = () => {
             <SidebarLink key={item.label} item={item} />
           ))}
         </div>
+        <Separator />
+
+        <div className="flex flex-wrap gap-x-2 text-[13px] pt-4 px-6 text-thirdColor font-medium text-balance">
+          <span>About the Service</span>
+          <span>Press</span>
+          <span>Copyright</span>
+          <span>Contact Us</span>
+          <span>Authors</span>
+          <span>Advertisers</span>
+        </div>
+        <div className="flex flex-wrap gap-x-2 text-[13px] pt-4 px-6 text-thirdColor font-medium text-balance">
+          <span>Developers</span>
+          <span>Terms of Service</span>
+          <span>Privacy</span>
+          <span>Rules and Safety</span>
+          <span>How YouTube Works</span>
+          <span>Testing New Features</span>
+        </div>
+        <div className="py-4 px-6 text-xs text-thirdColor/70">© 2026 Not Google LLCPC</div>
       </div>
     </div>
   )
