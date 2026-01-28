@@ -140,7 +140,7 @@
 }
 
 .sidebarScrollBar::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .sidebarScrollBar::-webkit-scrollbar-track {
@@ -149,7 +149,7 @@
 
 .sidebarScrollBar::-webkit-scrollbar-thumb {
   background-color: transparent;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .sidebarScrollBar:hover::-webkit-scrollbar-thumb {
