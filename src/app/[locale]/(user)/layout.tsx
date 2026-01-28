@@ -9,7 +9,7 @@ export default function UserLayout({
   return (
     <div>
       <Navbar />
-      <div className="flex">
+      <div className="flex gap-6">
         <Sidebar />
         {children}
       </div>
