@@ -57,7 +57,7 @@ export const SearchMenu = () => {
                         <Search />
                     </div>
                 </div>
-                <Button variant="iconVariant" type="button" onClick={() => setOpen(true)} className="bg-secondColor/8"><Mic /></Button>
+                <Button variant="iconVariant" type="button" onClick={() => setOpen(true)} className="bg-secondColor/8 ml-3"><Mic /></Button>
             </div>
             <VoiceModal
                 open={open}
