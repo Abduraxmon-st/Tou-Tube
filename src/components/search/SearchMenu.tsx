@@ -53,11 +53,11 @@ export const SearchMenu = () => {
                             )}
                         </div>
                     </div>
-                    <div className="border bg-secondColor/8 border-secondColor/8! rounded-r-full flex items-center justify-center w-16 h-10">
+                    <Button className="border bg-secondColor/8! border-secondColor/8! rounded-r-full flex items-center justify-center w-16 h-10 [&_svg:not([class*='size-'])]:size-6">
                         <Search />
-                    </div>
+                    </Button>
                 </div>
-                <Button variant="iconVariant" type="button" onClick={() => setOpen(true)} className="bg-secondColor/8 ml-3"><Mic /></Button>
+                <Button variant="iconVariant" type="button" onClick={() => setOpen(true)} className="bg-secondColor/9 ml-3"><Mic /></Button>
             </div>
             <VoiceModal
                 open={open}
