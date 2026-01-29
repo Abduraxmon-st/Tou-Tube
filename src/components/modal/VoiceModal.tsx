@@ -65,7 +65,7 @@ export function VoiceModal({ open, onOpenChange, onResult }: VoiceDialogProps) {
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="max-w-xl bg-[#202020] text-white border-none">
+            <DialogContent className="sm:max-w-xl bg-[#202020] text-white border-none">
                 <DialogHeader>
                     <DialogTitle className="text-lg">
                         {previewText || "Говорите..."}
@@ -75,9 +75,9 @@ export function VoiceModal({ open, onOpenChange, onResult }: VoiceDialogProps) {
                 <div className="flex justify-center py-14">
                     <Button
                         type="button"
-                        className="h-20 w-20 rounded-full bg-red-600 hover:bg-red-700"
+                        className="h-20 w-20 rounded-full bg-red-600 hover:bg-red-700 [&_svg:not([class*='size-'])]:size-6"
                     >
-                        <Mic size={32} />
+                        <Mic />
                     </Button>
                 </div>
             </DialogContent>

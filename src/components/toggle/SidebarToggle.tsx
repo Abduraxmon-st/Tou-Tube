@@ -9,7 +9,7 @@ export const SidebarToggle = () => {
     <Button
       variant={"iconVariant"}
       onClick={() => setSidebarToggle(!sidebarToggle)}
-      className="p-2">
+      className="hidden sm:block p-2">
       <Menu size={24} />
     </Button>
   )

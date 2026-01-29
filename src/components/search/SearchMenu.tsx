@@ -4,6 +4,7 @@ import { Input } from "../ui/input"
 import { useState } from "react"
 import { Button } from "../ui/button"
 import { VoiceModal } from "../modal"
+import useStore from "@/context/store"
 
 // declare global {
 //     interface Window {
@@ -13,7 +14,7 @@ import { VoiceModal } from "../modal"
 
 export const SearchMenu = () => {
     const [query, setQuery] = useState("")
-    const [open, setOpen] = useState(false);
+    const { microToggle, setMicroToggle } = useStore()
     // const inputRef = useRef<HTMLInputElement>(null);
 
     // const handleKeyboardClick = () => {
@@ -24,8 +25,8 @@ export const SearchMenu = () => {
     }
     return (
         <>
-            <div className="flex items-center">
-                <div className="w-135.5 flex">
+            <div className="flex items-center justify-end 2md:justify-center flex-1 ml-10">
+                <div className="max-w-145.5 w-full flex">
                     <div className="relative border border-secondColor/15 border-r-0 rounded-tl-[40px] rounded-bl-[40px] h-10 w-full pl-2">
                         <Input
                             value={query}
@@ -57,11 +58,11 @@ export const SearchMenu = () => {
                         <Search />
                     </Button>
                 </div>
-                <Button variant="iconVariant" type="button" onClick={() => setOpen(true)} className="bg-secondColor/9 ml-3"><Mic /></Button>
+                <Button variant="iconVariant" type="button" onClick={() => setMicroToggle(!microToggle)} className="sm:bg-secondColor/9 ml-3"><Mic /></Button>
             </div>
             <VoiceModal
-                open={open}
-                onOpenChange={setOpen}
+                open={microToggle}
+                onOpenChange={setMicroToggle}
                 onResult={(text) =>
                     setQuery((prev) => (prev ? prev + " " + text : text))
                 }

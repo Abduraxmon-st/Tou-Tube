@@ -164,3 +164,9 @@
   background-color: var(--color-thirdColor);
   border-radius: 3px;
 }
+
+@media (max-width: 540px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,18 +1,41 @@
 "use client"
 import { Logo } from "../logo"
 import { Link } from "@/i18n/navigation"
-import { SearchMenu } from "../search"
+import { MobileSearchMenu, SearchMenu } from "../search"
 import NavbarRight from "./NavbarRight"
 import { SidebarToggle } from "../toggle"
+import { useState } from "react"
+import { ArrowLeft } from "lucide-react"
+import { Button } from "../ui/button"
+import { isTablet } from "@/constants"
 
 export const Navbar = () => {
-
-  return (
-    <div className="flex items-center justify-between px-4 max-h-14">
+  const [open, setOpen] = useState(false)
+  console.log(open, isTablet);
+  if (isTablet) {
+    if (open) {
+      return (
+        <div className="flex items-center justify-between py-2 sm:px-4 max-h-14">
+          <Button variant="iconVariant" onClick={() => setOpen(!open)}><ArrowLeft /></Button>
+          <SearchMenu />
+        </div>
+      )
+    } else {
+      return (
+        <div className="flex items-center justify-between pr-1 sm:px-4 max-h-14">
+          <div className="flex items-center">
+            <SidebarToggle />
+            <Link href="/"><Logo className="py-3.5 px-4" /></Link>
+          </div>
+          <MobileSearchMenu open={open} setOpen={setOpen} />
+          <NavbarRight />
+        </div>
+      )
+    }
+  } else return (
+    <div className="flex items-center justify-between px-2 sm:px-4 max-h-14">
       <div className="flex items-center">
-        {/* sidebar menu */}
         <SidebarToggle />
-
         <Link href="/"><Logo className="py-3.5 px-4" /></Link>
       </div>
       <SearchMenu />

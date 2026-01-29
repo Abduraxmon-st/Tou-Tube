@@ -9,7 +9,7 @@ export default function UserLayout({
 }) {
   return (
     <div className="h-screen max-h-screen overflow-hidden">
-      <div className="relative z-10 mr-1.25 backdrop-blur-3xl bg-mainColor/80">
+      <div className="relative z-10 sm:mr-1.25 sm:backdrop-blur-3xl bg-mainColor sm:bg-mainColor/80">
         <Navbar />
         <NavbarTabs />
       </div>

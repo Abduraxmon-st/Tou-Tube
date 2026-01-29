@@ -3,10 +3,11 @@ import useStore from "@/context/store"
 import { SidebarClosed } from "./SidebarClosed"
 import { SidebarOpen } from "./SidebarOpen"
 import { SidebarSheet } from "../sheet"
+import { isNotDescktop } from "@/constants"
 
 export const Sidebar = () => {
   const { sidebarToggle } = useStore()
-  if (window.innerWidth < 1313) {
+  if (isNotDescktop) {
     return (
       <>
         <SidebarSheet />
