@@ -9,7 +9,7 @@ export default function UserLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-screen max-h-screen">
+    <div className="h-screen max-h-screen overflow-hidden">
       <div className="relative z-10 sm:mr-1.25 sm:backdrop-blur-3xl bg-mainColor sm:bg-mainColor/80">
         <Navbar />
         <NavbarTabs />
