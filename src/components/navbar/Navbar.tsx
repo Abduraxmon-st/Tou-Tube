@@ -1,17 +1,17 @@
 "use client"
 import { Logo } from "../logo"
 import { Link } from "@/i18n/navigation"
-import { MobileSearchMenu, SearchMenu } from "../search"
+import { SearchMenu } from "../search"
 import NavbarRight from "./NavbarRight"
 import { SidebarToggle } from "../toggle"
 import { useState } from "react"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "../ui/button"
 import { isTablet } from "@/constants"
+import { MobileNavbar } from "./MobileNavbar"
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
-  console.log(open, isTablet);
   if (isTablet) {
     if (open) {
       return (
@@ -21,16 +21,7 @@ export const Navbar = () => {
         </div>
       )
     } else {
-      return (
-        <div className="flex items-center justify-between pr-1 sm:px-4 max-h-14">
-          <div className="flex items-center">
-            <SidebarToggle />
-            <Link href="/"><Logo className="py-3.5 px-4" /></Link>
-          </div>
-          <MobileSearchMenu open={open} setOpen={setOpen} />
-          <NavbarRight />
-        </div>
-      )
+      return <MobileNavbar open={open} setOpen={setOpen} />
     }
   } else return (
     <div className="flex items-center justify-between px-2 sm:px-4 max-h-14">
