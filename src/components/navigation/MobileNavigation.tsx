@@ -24,7 +24,7 @@ export const MobileNavigation = () => {
         <p className="text-[10px] font-medium line-clamp-1">Subscriptions</p>
       </Link>
       <Link href="/you" className={`flex flex-col items-center gap-1.25 pt-2 w-16 hover:bg-buttonBgColor rounded-[10px]`}>
-        <Avatar className="size-6" />
+        <Avatar icon="https://yt3.googleusercontent.com/ytc/AIdro_lkDhfR4IQoQOti0IosPsSAEqhLLgtyGqmMmRGIpKBIdhtOTK_iy1Z_GU0MKBc9sh8dlA=s88-c-k-c0x00ffffff-no-rj" className="size-6" />
         <p className="text-[10px] font-medium line-clamp-1">You</p>
       </Link>
     </div>

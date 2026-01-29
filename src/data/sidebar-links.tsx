@@ -18,6 +18,7 @@ export const sidebarSubscriptionsSection = [
   {
     label: "Vanco Vanco",
     slug: "vanco-vanco",
+    logo: "https://yt3.googleusercontent.com/uF89oobUNUuONZOAUw6nyaQO8PAzgbjzyFRMyZl3QOfKkon4rUPbyYM558w6DA4XTApyHbX1cA=s160-c-k-c0x00ffffff-no-rj",
     path: "/subscriptions/vanco-vanco",
     icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>
   },
@@ -31,6 +32,7 @@ export const sidebarSubscriptionsSection = [
   {
     label: "Vanco Vanco",
     slug: "toji",
+    logo: "https://yt3.googleusercontent.com/uF89oobUNUuONZOAUw6nyaQO8PAzgbjzyFRMyZl3QOfKkon4rUPbyYM558w6DA4XTApyHbX1cA=s160-c-k-c0x00ffffff-no-rj",
     path: "/subscriptions/toji",
     icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>
   },
