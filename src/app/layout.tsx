@@ -12,13 +12,6 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "TouTube",
   description: "Better than you tube ;)",
-  manifest: "/manifest.json",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    viewportFit: "cover",
-  },
-
 };
 
 export default function RootLayout({
