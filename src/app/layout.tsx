@@ -12,6 +12,13 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "TouTube",
   description: "Better than you tube ;)",
+  manifest: "/manifest.json",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover",
+  },
+
 };
 
 export default function RootLayout({
@@ -24,6 +31,12 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/logo.svg" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/logo.svg" type="image/x-icon" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
       </head>
       <body
         className={`${roboto.variable} antialiased`}
