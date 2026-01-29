@@ -1,3 +1,3 @@
 import Logo from './YouTubeLogo.jpg'
-
-export { Logo }
+import Reaktor from './Reaktor.jpg'
+export { Logo, Reaktor }

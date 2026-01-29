@@ -15,7 +15,7 @@ export default function UserLayout({
         <NavbarTabs />
       </div>
       <div className="flex 2md:gap-6">
-        <div className="hidden sm:relative z-10 -mt-14">
+        <div className="hidden sm:block z-10 -mt-14">
           <Sidebar />
         </div>
         <div className="relative z-9 sm:-mt-28 flex-1 h-max max-h-dvh w-full overflow-y-auto pb-15">

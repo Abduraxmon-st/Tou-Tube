@@ -17,17 +17,21 @@ export const sidebarLinksSection_1 = [
 export const sidebarSubscriptionsSection = [
   {
     label: "Vanco Vanco",
-    path: "/subscriptions",
+    slug: "vanco-vanco",
+    path: "/subscriptions/vanco-vanco",
+    icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>
+  },
+  {
+    label: "REAKTOR",
+    slug: "reaktor",
+    logo: "https://yt3.googleusercontent.com/uF89oobUNUuONZOAUw6nyaQO8PAzgbjzyFRMyZl3QOfKkon4rUPbyYM558w6DA4XTApyHbX1cA=s160-c-k-c0x00ffffff-no-rj",
+    path: "/subscriptions/reaktor",
     icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>
   },
   {
     label: "Vanco Vanco",
-    path: "/subscriptions",
-    icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>
-  },
-  {
-    label: "Vanco Vanco",
-    path: "/subscriptions",
+    slug: "toji",
+    path: "/subscriptions/toji",
     icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>
   },
 ]
