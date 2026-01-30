@@ -16,7 +16,7 @@ export const SidebarSheet = () => {
   const { sidebarToggle, setSidebarToggle } = useStore()
   return (
     <Sheet open={sidebarToggle} onOpenChange={setSidebarToggle}>
-      <SheetContent side="left" className="w-61! gap-0 p-0! bg-mainColor border-r-0" showCloseButton={false}>
+      <SheetContent side="left" className="w-61! gap-0 p-0! backdrop-blur-3xl bg-mainColor/80 border-r-0" showCloseButton={false}>
         <SheetTitle className="flex items-center pl-4 h-14 text-secondColor! font-normal">
           <SidebarToggle />
 
@@ -38,7 +38,7 @@ export const SidebarSheet = () => {
               </div>
 
               {sidebarSubscriptionsSection.map((item, index) => (
-                <SidebarLink key={item.label + index} item={item} onClick={() => setSidebarToggle(false)}/>
+                <SidebarLink key={item.label + index} item={item} onClick={() => setSidebarToggle(false)} />
               ))}
             </div>
             <Separator />
@@ -49,7 +49,7 @@ export const SidebarSheet = () => {
                 <ChevronRight size={16} />
               </div>
               {sidebarLinksSection_2.map((item) => (
-                <SidebarLink key={item.label} item={item} onClick={() => setSidebarToggle(false)}/>
+                <SidebarLink key={item.label} item={item} onClick={() => setSidebarToggle(false)} />
               ))}
             </div>
             <Separator />
@@ -57,14 +57,14 @@ export const SidebarSheet = () => {
             <div className="p-3">
               <p className="font-semibold pl-3">Other possibilities</p>
               {otherPossibilities.map((item) => (
-                <SidebarLink key={item.label} item={item} onClick={() => setSidebarToggle(false)}/>
+                <SidebarLink key={item.label} item={item} onClick={() => setSidebarToggle(false)} />
               ))}
             </div>
             <Separator />
 
             <div className="p-3">
               {sidebarLinksSection_3.map((item) => (
-                <SidebarLink key={item.label} item={item} onClick={() => setSidebarToggle(false)}/>
+                <SidebarLink key={item.label} item={item} onClick={() => setSidebarToggle(false)} />
               ))}
             </div>
             <Separator />
