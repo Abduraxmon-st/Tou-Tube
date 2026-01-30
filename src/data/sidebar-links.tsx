@@ -72,12 +72,12 @@ export const sidebarLinksSection_2 = [
 export const otherPossibilities = [
   {
     label: "Creative Studio Tue Tube",
-    path: "/",
+    path: "//",
     icon: <CreativeStudioIcon />
   },
   {
     label: "Tue Tube for Kids",
-    path: "/",
+    path: "//",
     icon: <img src="/logo.svg" alt="logo" className="w-5.5 ml-0.5 -rotate-10" />
   },
 ]
@@ -90,17 +90,17 @@ export const sidebarLinksSection_3 = [
   },
   {
     label: "Complaints",
-    path: "/",
+    path: "//",
     icon: <Flag />
   },
   {
     label: "Reference",
-    path: "/",
+    path: "//",
     icon: <CircleQuestionMark />
   },
   {
     label: "Send feedback",
-    path: "/",
+    path: "//",
     icon: <MessageSquareWarning />
   },
 ]

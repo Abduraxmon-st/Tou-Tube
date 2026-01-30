@@ -1,11 +1,15 @@
-import { Link } from "@/i18n/navigation"
+import { Link, usePathname } from "@/i18n/navigation"
 import { Home, Plus, TvMinimalPlay } from "lucide-react"
 import { ShortsIcon } from "@/assets/icons"
 import { Avatar } from "../avatar"
 
 export const MobileNavigation = () => {
+  const pathname = usePathname();
+
+  const isActive = (path: string) =>
+    pathname === path || pathname.startsWith(path + "/");
   return (
-    <div className="flex fixed z-9 bottom-0 left-0 md:hidden items-center justify-between backdrop-blur-3xl bg-mainColor/80 w-screen border-t border-thirdColor/30">
+    <div className="flex fixed z-9 bottom-0 left-0 md:hidden items-center justify-around backdrop-blur-3xl bg-mainColor/80 w-screen border-t border-thirdColor/30">
       <Link href="/" className={`flex flex-col items-center gap-1.25 pt-2 pb-1 w-16 hover:bg-buttonBgColor rounded-[10px]`}>
         <Home />
         <p className="text-[10px] font-medium line-clamp-1">Home</p>
@@ -15,8 +19,8 @@ export const MobileNavigation = () => {
         <p className="text-[10px] font-medium line-clamp-1">Shorts</p>
       </Link>
 
-      <div className="flex items-center justify-center size-9 bg-thirdColor/20 rounded-full">
-        <Plus size={24}/>
+      <div className="flex items-center justify-center size-10 bg-thirdColor/20 rounded-full mb-1">
+        <Plus size={24} />
       </div>
 
       <Link href="/subscriptions" className={`flex flex-col items-center gap-1.25 pt-2 pb-1 w-16 hover:bg-buttonBgColor rounded-[10px]`}>
