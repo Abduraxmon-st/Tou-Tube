@@ -51,11 +51,11 @@ export default function UserLayout({
         <Navbar />
         <NavbarTabs />
       </div>
-      <div className="2md:flex 2md:gap-6">
+      <div className="2md:flex">
         <div className="hidden sm:block z-10 -mt-14">
           <Sidebar />
         </div>
-        <div ref={contentRef} className="relative -mt-28 z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto pb-15 pt-29 sm:pb-0">
+        <div ref={contentRef} className="relative -mt-28 z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto pb-15 pt-29 sm:pb-0 2md:pl-6">
           {children}
         </div>
       </div>

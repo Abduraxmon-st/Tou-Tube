@@ -20,7 +20,11 @@
   /* many buttons background color */
 
   --breakpoint-xxl: 1312px;
+  --breakpoint-3md: 1125px !important;
   --breakpoint-2md: 792px;
+  --breakpoint-2xm: 520px;
+  --breakpoint-xm: 426px;
+  --breakpoint-xs: 375px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-roboto: var(--font-roboto);

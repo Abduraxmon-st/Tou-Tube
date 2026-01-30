@@ -12,6 +12,9 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "TouTube",
   description: "Better than you tube ;)",
+  icons: {
+    icon: "/logo.svg"
+  }
 };
 
 export default function RootLayout({

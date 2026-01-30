@@ -1,44 +1,19 @@
+import { MainCard } from "@/components/card"
+import { ShortsSection } from "@/components/section"
+import { VideosSection } from "@/components/section/VideosSection"
+import { videos } from "@/data/videos"
+
 const Home = () => {
+  const videosSection_1 = videos(3)
+  const videosSection_2 = videos(9)
+
   return (
-    <div>Home
-      <div className="grid gap-4 grid-cols-5 h-500">
-        <div className="bg-green-600"></div>
-        <div className="bg-blue-600"></div>
-        <div className="bg-yellow-600"></div>
-        <div className="bg-purple-600"></div>
-        <div className="bg-cyan-600"></div>
-        <div className="bg-red-600"></div>
-        <div className="bg-green-600"></div>
-        <div className="bg-blue-600"></div>
-        <div className="bg-yellow-600"></div>
-        <div className="bg-purple-600"></div>
-        <div className="bg-cyan-600"></div>
-        <div className="bg-red-600"></div>
-        <div className="bg-green-600"></div>
-        <div className="bg-blue-600"></div>
-        <div className="bg-yellow-600"></div>
-        <div className="bg-purple-600"></div>
-        <div className="bg-cyan-600"></div>
-        <div className="bg-red-600"></div>
-        <div className="bg-green-600"></div>
-        <div className="bg-blue-600"></div>
-        <div className="bg-yellow-600"></div>
-        <div className="bg-purple-600"></div>
-        <div className="bg-cyan-600"></div>
-        <div className="bg-red-600"></div>
-        <div className="bg-green-600"></div>
-        <div className="bg-blue-600"></div>
-        <div className="bg-yellow-600"></div>
-        <div className="bg-purple-600"></div>
-        <div className="bg-cyan-600"></div>
-        <div className="bg-red-600"></div>
-        <div className="bg-green-600"></div>
-        <div className="bg-blue-600"></div>
-        <div className="bg-yellow-600"></div>
-        <div className="bg-purple-600"></div>
-        <div className="bg-cyan-600"></div>
-        <div className="bg-red-600"></div>
-      </div>
+    <div className="max-w-545 mx-auto xm:pr-4 xm:pl-4 sm:pl-6 sm:pr-6 2md:pl-0! 2xl:pr-10 pt-4 sm:pt-6">
+      <VideosSection videos={videosSection_1} />
+      <ShortsSection />
+      <VideosSection videos={videosSection_2} />
+      <ShortsSection />
+      <VideosSection videos={videosSection_2} />
     </div>
   )
 }

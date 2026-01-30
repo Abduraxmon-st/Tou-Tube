@@ -18,7 +18,7 @@ export const NavbarTabs = ({ className }: { className?: string }) => {
             <TabsTrigger
               value={item.label}
               key={item.label}
-              className="text-secondColor bg-secondColor/9 h-7.5 sm:h-8.5 py-0 px-3">
+              className="text-secondColor hover:text-secondColor bg-secondColor/9 h-7.5 sm:h-8.5 py-0 px-3 hover:bg-secondColor/12">
               {item.label}
             </TabsTrigger>
           ))}
