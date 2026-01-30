@@ -15,9 +15,9 @@ export const SubscriptionsSlugPage = async ({ params }: { params: { slug: string
     return (
         <div className="px-16.25 flex flex-col gap-2">
             <Image loading="eager" src={Reaktor} alt="Reaktor" className="rounded-3xl w-full h-43" />
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center mt-4">
                 <Avatar className="size-40" icon={subscription?.logo ?? ""} />
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 pt-2">
                     <h2 className="text-[36px] leading-5.5 font-semibold">{subscription?.label}</h2>
                     <div className="flex items-center text-thirdColor">
                         <h3 className="font-medium text-white uppercase">@{subscription?.slug}</h3>
