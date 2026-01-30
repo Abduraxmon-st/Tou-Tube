@@ -27,6 +27,9 @@ export const sidebarSubscriptionsSection = [
     slug: "reaktor",
     logo: "https://yt3.googleusercontent.com/uF89oobUNUuONZOAUw6nyaQO8PAzgbjzyFRMyZl3QOfKkon4rUPbyYM558w6DA4XTApyHbX1cA=s160-c-k-c0x00ffffff-no-rj",
     path: "/subscriptions/reaktor",
+    subscriptions: "128 thousand",
+    videos: "29",
+    description: "We tried to show the series you may have seen from a different perspective.We have no personal animosity towards the authors and creators of the series.",
     icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>
   },
   {
