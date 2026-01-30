@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react"
 
 export const SidebarOpen = () => {
   return (
-    <div className="sidebarScrollBar pr-2 h-full max-h-[calc(100vh-3.5rem)] overflow-y-scroll">
+    <div className="sidebarScrollBar pr-2 h-full max-h-[calc(100vh-3.5rem)] overflow-y-scroll overflow-x-hidden">
       <div className="w-60 h-max">
         <div className="p-3">
           {sidebarLinksSection_1.map((item) => (

@@ -13,7 +13,7 @@ import { MobileNavbar } from "./MobileNavbar"
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
   if (isTablet) {
-    if (open) {
+    if (open) { 
       return (
         <div className="flex items-center justify-between py-2 sm:px-4 max-h-14">
           <Button variant="iconVariant" onClick={() => setOpen(!open)}><ArrowLeft /></Button>
