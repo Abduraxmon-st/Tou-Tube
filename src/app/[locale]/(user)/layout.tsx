@@ -12,7 +12,6 @@ export default function UserLayout({
   children: React.ReactNode;
 }) {
   const contentRef = useRef<HTMLDivElement>(null);
-  console.log(contentRef);
   const navbarRef = useRef<HTMLDivElement>(null);
   const lastScrollTop = useRef(0);
 

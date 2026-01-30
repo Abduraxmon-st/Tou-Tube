@@ -3,33 +3,35 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
-import { Bell, BellIcon, Settings } from "lucide-react"
+import { BellIcon, Settings } from "lucide-react"
 import { Button } from "../ui/button"
 import { Separator } from "../ui/separator"
+import { Link } from "@/i18n/navigation"
+import { PopoverClose } from "@radix-ui/react-popover"
 
-const notifications = [
-    {
-        id: 1,
-        image: 'https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-3.png',
-        message: 'Harry assigned you task of New API implementation',
-        fallback: 'HL',
-        time: '15 Minutes'
-    },
-    {
-        id: 2,
-        image: 'https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-6.png',
-        message: 'Jerry joined team',
-        fallback: 'OS',
-        time: '35 Minutes'
-    },
-    {
-        id: 3,
-        image: 'https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-5.png',
-        message: 'Congratulate ruby for married life',
-        fallback: 'HR',
-        time: '3 days'
-    }
-]
+// const notifications = [
+//     {
+//         id: 1,
+//         image: 'https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-3.png',
+//         message: 'Harry assigned you task of New API implementation',
+//         fallback: 'HL',
+//         time: '15 Minutes'
+//     },
+//     {
+//         id: 2,
+//         image: 'https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-6.png',
+//         message: 'Jerry joined team',
+//         fallback: 'OS',
+//         time: '35 Minutes'
+//     },
+//     {
+//         id: 3,
+//         image: 'https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-5.png',
+//         message: 'Congratulate ruby for married life',
+//         fallback: 'HR',
+//         time: '3 days'
+//     }
+// ]
 
 export const NotificationMenu = () => {
     return (
@@ -39,18 +41,20 @@ export const NotificationMenu = () => {
                     <BellIcon />
                 </Button>
             </PopoverTrigger>
-            <PopoverContent align="end" className='w-120 p-0 bg-secondColor/8 border-none text-white'>
-                <div className='grid'>
-                    <div className='flex items-center justify-between gap-2 p-2'>
-                        <span className='font-medium'>Notifications</span>
-                        <Settings />
-                    </div>
-                    <Separator />
-                    <div>
-                        <BellIcon size={120} className="text-secondColor/10!" />
-                        <h2 className="">Здесь пока ничего нет</h2>
-                        <h4>В этом разделе будут собраны уведомления о новых видео на каналах, на которые вы подписаны.</h4>
-                    </div>
+            <PopoverContent align="end" className='w-120 max-w-120 max-h-160.5 p-0 bg-buttonBgColor border-0! text-secondColor rounded-2xl'>
+                <div className='flex items-center justify-between gap-2 py-3 px-4'>
+                    <span className='font-medium'>Notifications</span>
+                    <Link href="/settings">
+                        <PopoverClose>
+                            <Settings />
+                        </PopoverClose>
+                    </Link>
+                </div>
+                <Separator />
+                <div className="flex flex-col items-center justify-center h-140 max-w-65 pb-10 mx-auto text-center text-secondColor/35!">
+                    <BellIcon size={120} />
+                    <p className="font-semibold mt-5">There's nothing here yet</p>
+                    <p className="text-sm mt-2">This section will collect notifications about new videos on channels you're subscribed to.</p>
                 </div>
             </PopoverContent>
         </Popover>
