@@ -1,5 +1,5 @@
 import { CreativeStudioIcon, ShortsIcon } from "@/assets/icons";
-import { CircleQuestionMark, CircleUserRound, Clock, Flag, History, Home, ListVideo, MessageSquareWarning, Settings, SquarePlay, ThumbsUp, TvMinimalPlay } from "lucide-react";
+import { CircleQuestionMark, CircleUserRound, Clock, Flag, Globe, History, Home, Info, ListVideo, MessageSquareWarning, Settings, SquarePlay, ThumbsUp, TrendingUp, TvMinimalPlay, User, Youtube } from "lucide-react";
 
 export const sidebarLinksSection_1 = [
   {
@@ -29,8 +29,37 @@ export const sidebarSubscriptionsSection = [
     path: "/subscriptions/reaktor",
     subscriptions: "128 thousand",
     videos: "29",
+    cardNumber: "5614 0000 0000 0000",
+    name: "Rovshanbek M",
+    reklamaLink: "https://www.nmadur.com/",
     description: "We tried to show the series you may have seen from a different perspective.We have no personal animosity towards the authors and creators of the series.",
-    icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>
+    icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>,
+    informationIcon: [
+      {
+        icon: <Youtube />,
+        title: "www.youtube.com/@Reaktor",
+      },
+      {
+        icon: <Globe />,
+        title: "Turkish",
+      },
+      {
+        icon: <Info />,
+        title: "Registration date: 21 Feb 2023",
+      },
+      {
+        icon: <User />,
+        title: "128 thousand subscribers",
+      },
+      {
+        icon: <SquarePlay />,
+        title: "29 videos",
+      },
+      {
+        icon: <TrendingUp />,
+        title: "10 724 062 views",
+      },
+    ],
   },
   {
     label: "Vanco Vanco",
