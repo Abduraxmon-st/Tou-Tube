@@ -1,5 +1,5 @@
 "use client"
-import { Navbar } from "@/components/navbar";
+import { Navbar, ShortNavbar } from "@/components/navbar";
 import { MobileNavigation } from "@/components/navigation";
 import { Sidebar } from "@/components/sidebar";
 import { NavbarTabs } from "@/components/tabs";
@@ -17,11 +17,15 @@ export default function UserLayout({
   const navbarRef = useRef<HTMLDivElement>(null);
   const lastScrollTop = useRef(0);
   const [tabs, setTabs] = useState(true)
-
+  const [short, setShort] = useState(false)
   useEffect(() => {
     if (pathname !== "/") {
       setTabs(false)
     } else setTabs(true)
+
+    if (pathname === "/shorts") {
+      setShort(true)
+    } else setShort(false)
   }, [pathname])
 
   useEffect(() => {
@@ -57,18 +61,18 @@ export default function UserLayout({
   return (
     <div className="h-dvh max-h-dvh overflow-hidden">
       <div ref={navbarRef} className="relative z-10 sm:mr-1.5 backdrop-blur-3xl bg-mainColor/80 border-b sm:border-b-0 border-buttonBgColor transition-transform duration-200 ease-in-out">
-        <Navbar />
+        {!short ? <Navbar /> : <ShortNavbar />}
         {tabs && <NavbarTabs />}
       </div>
       <div className="2md:flex">
         <div className={`hidden sm:block z-10 ${tabs && "-mt-14"}`}>
           <Sidebar />
         </div>
-        <div ref={contentRef} className={`relative ${tabs && '-mt-28 pt-29'} z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto pb-15 sm:pb-0 2md:pl-6`}>
+        <div ref={contentRef} className={`relative ${tabs && '-mt-28 pt-29 pb-15'} z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto sm:pb-0 2md:pl-6`}>
           {children}
         </div>
       </div>
-      <MobileNavigation />
+      <MobileNavigation short={short} />
     </div>
   );
 }
