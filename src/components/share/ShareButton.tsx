@@ -5,9 +5,9 @@ export default function ShareButton({
   text = "Better than YouTube ;)",
   url = "https://tou-tube.vercel.app",
 }: {
-  title: string;
-  text: string;
-  url: string;
+  title?: string;
+  text?: string;
+  url?: string;
 }) {
   const handleShare = async () => {
     if (navigator.share) {

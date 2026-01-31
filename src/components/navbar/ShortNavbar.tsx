@@ -15,7 +15,7 @@ export const ShortNavbar = () => {
         <Button onClick={() => setOpen(!open)} variant="iconVariant" className="[&_svg:not([class*='size-'])]:size-5.5 -mr-2"><EllipsisVertical /></Button>
       </div>
       {/* <ShortsNavbarLinks /> */}
-      <ShareButton text="a" title="a" url="https://tou-tube.vercel.app" />
+      <ShareButton />
       <ShortSheet open={open} setOpen={setOpen} />
     </div>
   )
