@@ -89,6 +89,6 @@ export const SidebarSheet = () => {
           </div>
         </div>
       </SheetContent>
-    </Sheet >
+    </Sheet>
   )
 }

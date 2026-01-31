@@ -10,7 +10,7 @@ const shortVideos = shorts(10)
 
 export const ShortSwiperMobile = () => {
   return (
-    <div className="relative max-h-[calc(100vh-56px)] grid sm:hidden md:pt-2">
+    <div className="relative max-h-[calc(100dvh-56px)] grid sm:hidden md:pt-2">
       <Swiper
         direction={'vertical'}
         modules={[Mousewheel]}
@@ -33,11 +33,11 @@ export const ShortSwiperMobile = () => {
           shortVideos.map((short) => (
             <SwiperSlide key={short.id} className="relative">
               {/* main shection */}
-              <div className="relative flex w-full h-full py-7.5">
+              <div className="relative flex w-full h-full pt-10 pb-5">
                 <Image src={short.cover_image} width={480} height={960} alt={short.title} className="w-full h-full object-cover" />
                 <div className="absolute left-0 bottom-0 h-25 w-full z-2 bg-linear-to-b from-transparent to-black/70" />
                 {/* left section mobile */}
-                <div className="flex 2xl:hidden absolute z-3 left-2 bottom-2  flex-col gap-2 max-w-full pr-10">
+                <div className="flex 2xl:hidden absolute z-3 left-2 bottom-3 flex-col gap-2 max-w-full pr-10">
                   <div className="flex items-center gap-2 h-10">
                     <div className="size-8 rounded-full overflow-hidden">
                       <Image src={short.avatar_image} width={40} height={40} alt="avatar" className="w-full h-full object-cover" />
@@ -58,11 +58,11 @@ export const ShortSwiperMobile = () => {
               </div>
 
               {/* right buttons section */}
-              <div className="absolute z-4 right-0 bottom-2 flex flex-col gap-1 justify-end items-center px-2 pb-2 text-xs font-medium" >
+              <div className="absolute z-4 right-0 bottom-2 flex flex-col gap-1.5 justify-end items-center px-2 pb-2 text-xs font-medium" >
                 {
                   shortButtons(short).map((item, i) => (
                     <div key={item.label + `${i}`} className="flex flex-col text-center">
-                      <Button variant="iconVariant" className="[&_svg:not([class*='size-'])]:size-5">
+                      <Button variant="iconVariant" className="[&_svg:not([class*='size-'])]:size-5 pb-1.5!">
                         {item.icon}
                       </Button>
                       <p className="text-shadow-lg">{item.label}</p>

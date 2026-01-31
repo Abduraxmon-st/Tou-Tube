@@ -15,8 +15,8 @@ export const MobileNavigation = ({ short }: { short: boolean }) => {
         <p className="text-[10px] font-medium line-clamp-1">Shorts</p>
       </Link>
 
-      <div className="flex items-center justify-center size-10 bg-thirdColor/20 rounded-full mb-1">
-        <Plus size={24} />
+      <div className="flex items-center justify-center size-9 bg-thirdColor/20 rounded-full mb-1">
+        <Plus size={26} />
       </div>
 
       <Link href="/subscriptions" className={`flex flex-col items-center gap-1.25 pt-2 pb-1 w-16 hover:bg-buttonBgColor rounded-[10px]`}>

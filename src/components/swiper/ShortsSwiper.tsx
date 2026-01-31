@@ -50,7 +50,7 @@ export const ShortsSwiper = () => {
         //     slidesPerView: 1.02
         //   }
         // }}
-        className="w-full p-0! pb-16! shorts-swiper"
+        className="w-full p-0! shorts-swiper"
       >
         {
           shortVideos.map((short) => (

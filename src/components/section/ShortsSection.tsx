@@ -3,11 +3,11 @@ import { Button } from "../ui/button"
 import { EllipsisVertical } from "lucide-react"
 import { ShortsCard, ShortsCardMobile } from "../card"
 import { shorts } from "@/data/shorts"
+const shortsSection_1 = shorts(5)
+const shortsSection_2 = shorts(3)
+const shortsSection_3 = shorts(4)
 
 export const ShortsSection = () => {
-  const shortsSection_1 = shorts(5)
-  const shortsSection_2 = shorts(3)
-  const shortsSection_3 = shorts(4)
   return (
     <>
       <div className="hidden xl:block my-5">
