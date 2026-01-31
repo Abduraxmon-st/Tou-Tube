@@ -1,3 +1,4 @@
 export * from './ShortsIcon'
 export * from './CreativeStudioIcon'
 export * from './ShortsIconFilled'
+export * from './ShareIcon'

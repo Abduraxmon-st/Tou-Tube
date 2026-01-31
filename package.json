@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -H 192.168.100.136",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -25,6 +25,7 @@
     "next-intl": "^4.7.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "swiper": "^12.1.0",
     "tailwind-merge": "^3.4.0",
     "zustand": "^5.0.10"
   },

@@ -1,6 +1,10 @@
+import { ShortsSwiper } from "@/components/swiper"
+
 const ShortsPage = () => {
   return (
-    <div className="h-500">ShortsPage</div>
+    <div className="grid">
+      <ShortsSwiper />
+    </div>
   )
 }
 

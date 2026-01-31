@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -170,4 +173,23 @@
   ::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Prev button */
+.prev-btn {
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.prev-btn:not(.swiper-button-disabled) {
+  transform: translateY(-175%);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.next-btn.swiper-button-disabled {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-125%);
 }
