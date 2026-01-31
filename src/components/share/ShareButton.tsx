@@ -1,8 +1,8 @@
 "use client";
 
 export default function ShareButton({
-  title = "a",
-  text = "a",
+  title = "TouTube",
+  text = "Better than YouTube ;)",
   url = "https://tou-tube.vercel.app",
 }: {
   title: string;
@@ -10,17 +10,13 @@ export default function ShareButton({
   url: string;
 }) {
   const handleShare = async () => {
-    try {
-      if (navigator.share) {
-        await navigator.share({ title, text, url });
-      } else {
-        await navigator.clipboard.writeText(url);
-        alert("Link nusxalandi 📋");
-      }
-    } catch (e) {
-      console.error("Share failed:", e);
+    if (navigator.share) {
+      await navigator.share({ title, text, url });
+    } else {
+      window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}`, "_blank");
     }
   };
+
 
   return (
     <button onClick={handleShare} className="blog-share">
