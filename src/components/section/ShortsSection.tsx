@@ -22,7 +22,8 @@ export const ShortsSection = () => {
           ))}
         </div>
       </div>
-      <div className="hidden md:block my-5">
+
+      <div className="hidden md:block xl:hidden my-5">
         <div className="flex items-center gap-2 mb-4 ml-2">
           <ShortsIconFilled />
           <p className="flex-1 text-[20px] font-bold">Shorts</p>
@@ -34,6 +35,7 @@ export const ShortsSection = () => {
           ))}
         </div>
       </div>
+
       <div className="block md:hidden mt-5 mb-10">
         <div className="flex items-center gap-2 mb-4 ml-2">
           <ShortsIconFilled className="size-9" />

@@ -4,18 +4,28 @@ import { MobileNavigation } from "@/components/navigation";
 import { Sidebar } from "@/components/sidebar";
 import { NavbarTabs } from "@/components/tabs";
 import { isTablet } from "@/constants";
-import { useEffect, useRef } from "react";
+import { usePathname } from "@/i18n/navigation";
+import { useEffect, useRef, useState } from "react";
 
 export default function UserLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname()
   const contentRef = useRef<HTMLDivElement>(null);
   const navbarRef = useRef<HTMLDivElement>(null);
   const lastScrollTop = useRef(0);
+  const [tabs, setTabs] = useState(true)
 
   useEffect(() => {
+    if (pathname !== "/") {
+      setTabs(false)
+    } else setTabs(true)
+  }, [pathname])
+
+  useEffect(() => {
+
     if (!isTablet) {
       return
     }
@@ -44,15 +54,14 @@ export default function UserLayout({
     return () => el.removeEventListener("scroll", onScroll);
   }, []);
 
-
   return (
     <div className="h-dvh max-h-dvh overflow-hidden">
       <div ref={navbarRef} className="relative z-10 sm:mr-1.5 backdrop-blur-3xl bg-mainColor/80 border-b sm:border-b-0 border-buttonBgColor transition-transform duration-200 ease-in-out">
         <Navbar />
-        <NavbarTabs />
+        {tabs && <NavbarTabs />}
       </div>
       <div className="2md:flex">
-        <div className="hidden sm:block z-10 -mt-14">
+        <div className={`hidden sm:block z-10 ${tabs && "-mt-14"}`}>
           <Sidebar />
         </div>
         <div ref={contentRef} className="relative -mt-28 z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto pb-15 pt-29 sm:pb-0 2md:pl-6">
