@@ -15,7 +15,7 @@ export const MobileNavbar = ({ open, setOpen }: MobileNavbarProps) => {
     <div className="flex items-center justify-between pr-1 sm:px-4 max-h-14">
       <div className="flex items-center">
         <SidebarToggle />
-        <Link href="/"><Logo className="py-3.5 px-4" /></Link>
+        <Link href="/"><Logo className="py-2.5 px-4 text-lg! [&>img]:size-7" /></Link>
       </div>
       <MobileSearchMenu open={open} setOpen={setOpen} />
       <NavbarRight />

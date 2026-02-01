@@ -29,7 +29,7 @@ export const MobileSearchMenu = ({ open, setOpen }: MobileSearchProps) => {
         </div>
         <Button
           onClick={() => setOpen(!open)}
-          className="flex items-center justify-center size-max! [&_svg:not([class*='size-'])]:size-6 rounded-full p-2! ml-2 bg-transparent!">
+          className="flex items-center justify-center size-max! [&_svg:not([class*='size-'])]:size-6 rounded-full p-2! ml-1 bg-transparent!">
           <Search />
         </Button>
 
