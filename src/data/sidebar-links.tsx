@@ -1,4 +1,5 @@
 import { CreativeStudioIcon, ShortsIcon } from "@/assets/icons";
+import { Avatar } from "@/components/avatar";
 import { CircleQuestionMark, CircleUserRound, Clock, Flag, Globe, History, Home, Info, ListVideo, MessageSquareWarning, Settings, SquarePlay, ThumbsUp, TrendingUp, TvMinimalPlay, User, Youtube } from "lucide-react";
 
 export const sidebarLinksSection_1 = [
@@ -27,7 +28,7 @@ export const sidebarSubscriptionsSection = [
     name: "Rovshanbek M",
     reklamaLink: "https://www.nmadur.com/",
     description: "We tried to show the series you may have seen from a different perspective.We have no personal animosity towards the authors and creators of the series.",
-    icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>,
+    icon: <Avatar className="size-6" icon="https://yt3.googleusercontent.com/ytc/AIdro_kpgRmNo5IYJOo0uaLkwek2bd_EVoJXDsDgI-GQb6_7xw=s160-c-k-c0x00ffffff-no-rj" />,
     informationIcon: [
       {
         icon: <Youtube />,
@@ -67,7 +68,7 @@ export const sidebarSubscriptionsSection = [
     name: "Rovshanbek M",
     reklamaLink: "https://www.nmadur.com/",
     description: "We tried to show the series you may have seen from a different perspective.We have no personal animosity towards the authors and creators of the series.",
-    icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>,
+    icon: <Avatar className="size-6" icon="https://yt3.googleusercontent.com/uF89oobUNUuONZOAUw6nyaQO8PAzgbjzyFRMyZl3QOfKkon4rUPbyYM558w6DA4XTApyHbX1cA=s160-c-k-c0x00ffffff-no-rj" />,
     informationIcon: [
       {
         icon: <Youtube />,
@@ -107,7 +108,7 @@ export const sidebarSubscriptionsSection = [
     name: "Rovshanbek M",
     reklamaLink: "https://www.nmadur.com/",
     description: "We tried to show the series you may have seen from a different perspective.We have no personal animosity towards the authors and creators of the series.",
-    icon: <div className="size-6 rounded-full overflow-hidden"><img className="size-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREO17hg6KvLlweeZWN0LCEdi-OXM9qGpbQ9w&s" alt="Vanco" /></div>,
+    icon: <Avatar className="size-6" icon="https://yt3.googleusercontent.com/ocGMVst24DqRF3_CgIoNW86WN4xdxQhNmZxXNWuIqhHcuvYojzHAc4u9NQbsQsI1sy53MJWv=s160-c-k-c0x00ffffff-no-rj" />,
     informationIcon: [
       {
         icon: <Youtube />,
