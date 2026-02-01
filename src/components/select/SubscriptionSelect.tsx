@@ -1,0 +1,54 @@
+import { Bell, BellOff, BellRing, UserRoundX } from 'lucide-react'
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue
+} from '@/components/ui/select'
+import { useId } from 'react'
+
+type SubscriptionSelectProps = {
+    setSubs: (value: boolean) => void
+}
+
+export const SubscriptionSelect = ({ setSubs }: SubscriptionSelectProps) => {
+    const id = useId()
+    return (
+        <div className='w-full max-w-xs space-y-2'>
+            <Select onValueChange={(value) => {
+                if (value === 'Cancel subscription') {
+                    setSubs(false)
+                }
+            }} defaultValue='Based on preferences'>
+                <SelectTrigger id={id} className="w-[177px] h-9 rounded-[18px] bg-secondColor/8 border-none [&_svg:not([class*='size-'])]:size-6 cursor-pointer">
+                    <SelectValue placeholder='Select a music genre' />
+                </SelectTrigger>
+                <SelectContent className='bg-selectColor text-white mt-10 border-none'>
+                    <SelectGroup>
+                        <SelectItem value='all' className="hover:bg-secondColor/8! hover:text-white! [&_svg:not([class*='size-'])]:size-6 cursor-pointer">
+                            <BellRing color='white' />
+                            All
+                        </SelectItem>
+                        <SelectItem value='Based on preferences' className="hover:bg-secondColor/8! hover:text-white! [&_svg:not([class*='size-'])]:size-6 cursor-pointer">
+                            <Bell color='white' />
+                            Based on preferences
+                        </SelectItem>
+                        <SelectItem value='None' className="hover:bg-secondColor/8! hover:text-white! [&_svg:not([class*='size-'])]:size-6 cursor-pointer">
+                            <BellOff color='white' />
+                            None
+                        </SelectItem>
+                        <SelectItem value='Cancel subscription' className="hover:bg-secondColor/8! hover:text-white! [&_svg:not([class*='size-'])]:size-6 cursor-pointer">
+                            <UserRoundX color='white' />
+                            Cancel subscription
+                        </SelectItem>
+                    </SelectGroup>
+                </SelectContent>
+            </Select>
+        </div>
+    )
+}
+
+export default SubscriptionSelect

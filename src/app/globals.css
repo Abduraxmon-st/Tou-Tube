@@ -22,6 +22,8 @@
   --color-buttonBgColor: #222222;
   /* many buttons background color */
 
+  --color-selectColor: #282828;
+
   --breakpoint-xxl: 1312px;
   --breakpoint-3md: 1125px !important;
   --breakpoint-2md: 792px;

@@ -1,5 +1,5 @@
-import { Reaktor } from "@/assets/images";
 import { Avatar } from "@/components/avatar";
+import { SubscriptionButton } from "@/components/button";
 import { SubscriptionModal } from "@/components/modal";
 import { Button } from "@/components/ui/button";
 import { sidebarSubscriptionsSection } from "@/data/sidebar-links";
@@ -15,7 +15,7 @@ export const SubscriptionsSlugPage = async ({ params }: { params: { slug: string
 
     return (
         <div className="px-16.25 flex flex-col gap-2">
-            <Image loading="eager" src={Reaktor} alt="Reaktor" className="rounded-3xl w-full h-43" />
+            <Image loading="eager" src={subscription?.banner ?? ""} width={856} height={172} alt="Reaktor" className="rounded-3xl w-full h-43" />
             <div className="flex gap-4 items-center mt-4">
                 <Avatar className="size-40" icon={subscription?.logo ?? ""} />
                 <div className="flex flex-col pt-2">
@@ -31,7 +31,7 @@ export const SubscriptionsSlugPage = async ({ params }: { params: { slug: string
                         <h3 className="max-w-[536px] overflow-hidden whitespace-nowrap">{subscription?.description}</h3>
                         <SubscriptionModal subscription={subscription} />
                     </div>
-                    <Button className="w-29.5 h-9 font-medium text-[14px] leading-4.5 px-4 rounded-[18px] bg-white text-black">Subscraption</Button>
+                    <SubscriptionButton />
                 </div>
             </div>
         </div>
