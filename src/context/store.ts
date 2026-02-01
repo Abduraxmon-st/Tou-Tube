@@ -11,7 +11,7 @@ export interface Store {
 const useStore = create<Store>()(
   persist(
     (set) => ({
-      sidebarToggle: false,
+      sidebarToggle: true,
       microToggle: false,
 
       setSidebarToggle: (sidebarToggle) =>
@@ -23,7 +23,7 @@ const useStore = create<Store>()(
 
     {
       name: "TueTube",
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => sessionStorage),
     }
   )
 );
