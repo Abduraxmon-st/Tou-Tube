@@ -11,11 +11,27 @@ import { Button } from "../ui/button"
 import { Flag, Forward } from "lucide-react";
 
 type Information = {
-    icon:any;
+    icon:React.ReactNode;
     title: string;
 }
 
-export const SubscriptionModal = ({ subscription }: any) => {
+export type SubscriptionItem = {
+    label: string;
+    slug: string;
+    logo: string;
+    banner: string;
+    path: string;
+    subscriptions: string;
+    videos: string;
+    cardNumber: string;
+    name: string;
+    reklamaLink: string;
+    description: string;
+    icon: React.ReactNode;
+    informationIcon: Information[];
+  };
+
+export const SubscriptionModal = ( subscription: SubscriptionItem) => {
     return (
         <Dialog>
             <DialogTrigger asChild className="">
