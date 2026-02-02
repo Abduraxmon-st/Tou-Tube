@@ -3,6 +3,7 @@ import { Navbar, ShortNavbar } from "@/components/navbar";
 import { MobileNavigation } from "@/components/navigation";
 import { Sidebar } from "@/components/sidebar";
 import { NavbarTabs } from "@/components/tabs";
+import { SidebarToggle } from "@/components/toggle";
 import { isTablet } from "@/constants";
 import { usePathname } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -66,13 +67,18 @@ export default function UserLayout({
       </div>
       <div className="2md:flex">
         <div className={`hidden sm:block z-10 ${tabs && "-mt-14"}`}>
+          {short && (
+            <div className="hidden 2md:block pl-4 pt-3">
+              <SidebarToggle />
+            </div>
+          )}
           <Sidebar />
         </div>
         <div ref={contentRef} className={`relative ${tabs && '-mt-28 pt-28'} z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto pb-14 sm:pb-0 2md:pl-6`}>
           {children}
         </div>
       </div>
-      <MobileNavigation short={short} />
+      <MobileNavigation />
     </div>
   );
 }

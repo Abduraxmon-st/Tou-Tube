@@ -1,8 +1,7 @@
 import { Short } from "@/types"
 import { Card } from "../ui/card"
 import Image from "next/image"
-import { Button } from "../ui/button"
-import { EllipsisVertical } from "lucide-react"
+import { VideosSelect } from "../select"
 
 export const ShortsCard = ({ short }: { short: Short }) => {
   return (
@@ -12,7 +11,7 @@ export const ShortsCard = ({ short }: { short: Short }) => {
       </div>
       <div className="py-2 pr-9">
         <div className="relative">
-          <Button variant="iconVariant" className="absolute top-0 -right-9 [&_svg:not([class*='size-'])]:size-5.5"><EllipsisVertical /></Button>
+          <VideosSelect videoType="classic-shorts" buttonClass="absolute top-0 -right-9 [&_svg:not([class*='size-'])]:size-5.5" />
           <h2 className="font-medium line-clamp-2">{short.title}</h2>
         </div>
         <span className="text-thirdColor text-sm">{short.views}</span>

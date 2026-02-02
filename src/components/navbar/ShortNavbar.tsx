@@ -3,7 +3,8 @@ import { EllipsisVertical, Search } from "lucide-react"
 import { Button } from "../ui/button"
 import { useState } from "react"
 import { ShortSheet } from "../sheet"
-import ShareButton from "../share/ShareButton"
+import { isTablet } from "@/constants"
+import { VideosSelect } from "../select"
 
 export const ShortNavbar = () => {
   const [open, setOpen] = useState(false)
@@ -12,10 +13,14 @@ export const ShortNavbar = () => {
       <div className="flex items-end">
         <h2 className="flex-1 text-xl font-bold">Shorts</h2>
         <Button variant="iconVariant" className="[&_svg:not([class*='size-'])]:size-5.5 mr-2"><Search /></Button>
-        <Button onClick={() => setOpen(!open)} variant="iconVariant" className="[&_svg:not([class*='size-'])]:size-5.5 -mr-2"><EllipsisVertical /></Button>
+        {isTablet ? (
+          <Button onClick={() => setOpen(!open)} variant="iconVariant" className="[&_svg:not([class*='size-'])]:size-5.5 -mr-2"><EllipsisVertical /></Button>
+        ) : (
+          <VideosSelect videoType="shorts" />
+        )}
       </div>
       {/* <ShortsNavbarLinks /> */}
-      <ShareButton />
+      {/* <ShareButton /> */}
       <ShortSheet open={open} setOpen={setOpen} />
     </div>
   )

@@ -1,3 +1,4 @@
+import { isNotDescktop } from "@/constants";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
@@ -11,7 +12,7 @@ export interface Store {
 const useStore = create<Store>()(
   persist(
     (set) => ({
-      sidebarToggle: true,
+      sidebarToggle: isNotDescktop ? false : true,
       microToggle: false,
 
       setSidebarToggle: (sidebarToggle) =>

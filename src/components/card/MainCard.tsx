@@ -3,7 +3,7 @@ import { Avatar } from "../avatar"
 import { Card } from "../ui/card"
 import Image from "next/image"
 import { Button } from "../ui/button"
-import { EllipsisVertical } from "lucide-react"
+import { VideosSelect } from "../select"
 
 export const MainCard = ({ video }: { video: Video }) => {
   return (
@@ -20,7 +20,7 @@ export const MainCard = ({ video }: { video: Video }) => {
           <div className="flex-1 relative pr-6">
             <h2 className="font-medium line-clamp-2">{video.title}</h2>
             <p className="hidden xm:block text-thirdColor text-sm">{video.owner}</p>
-            <Button variant="iconVariant" className="absolute -top-2 -right-1 sm:-right-5.5 [&_svg:not([class*='size-'])]:size-5.5"><EllipsisVertical /></Button>
+            <VideosSelect videoType="classic" buttonClass="absolute -top-2 -right-1 sm:-right-5.5" />
             <div className="text-thirdColor text-sm xm:hidden!">
               <span className="text-thirdColor text-sm">{video.owner}</span>
               <span>{" "}•{" "}</span>

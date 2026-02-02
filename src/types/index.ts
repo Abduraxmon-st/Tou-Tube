@@ -3,7 +3,10 @@ export type SidebarItemType = {
   path: string,
   icon: React.ReactNode
 }
-
+export type selectItemType = {
+  label: string,
+  icon: React.ReactNode
+}
 export interface Video {
   id: number;
 
@@ -62,3 +65,19 @@ export interface Short {
 
   comments: Comment[];
 }
+
+export type VideoType =
+  | "classic"
+  | "classic-shorts"
+  | "all-shorts"
+  | "shorts"
+  | "history"
+  | "playlist"
+  | "see-later"
+  | "liked";
+
+export type VideoTypeProps = {
+  videoType: VideoType;
+  buttonClass?: string;
+  align?: "center" | "start" | "end"
+};

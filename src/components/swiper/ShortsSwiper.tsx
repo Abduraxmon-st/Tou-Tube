@@ -1,16 +1,16 @@
 "use client"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Navigation } from 'swiper/modules';
-import { ArrowDown, ArrowUp, MessageSquareText, ThumbsDown, ThumbsUp } from "lucide-react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import { Button } from "../ui/button";
 import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { shorts } from "@/data/shorts";
 import Image from "next/image";
 import { shortButtons } from "@/data/short-buttons";
+const shortVideos = shorts(10)
 
 export const ShortsSwiper = () => {
-  const shortVideos = shorts(10)
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 

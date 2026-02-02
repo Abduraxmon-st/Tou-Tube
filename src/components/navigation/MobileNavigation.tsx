@@ -3,9 +3,9 @@ import { Home, Plus, TvMinimalPlay } from "lucide-react"
 import { ShortsIcon } from "@/assets/icons"
 import { Avatar } from "../avatar"
 
-export const MobileNavigation = ({ short }: { short: boolean }) => {
+export const MobileNavigation = () => {
   return (
-    <div className={`flex fixed z-9 bottom-0 left-0 md:hidden items-center justify-around ${short ? 'backdrop-blur-3xl bg-mainColor/80' : "bg-mainColor"} w-screen border-t border-thirdColor/30`}>
+    <div className={`flex fixed z-9 bottom-0 left-0 md:hidden items-center justify-around backdrop-blur-3xl bg-mainColor/90 w-screen border-t border-thirdColor/30`}>
       <Link href="/" className={`flex flex-col items-center gap-1.25 pt-2 pb-1 w-16 hover:bg-buttonBgColor rounded-[10px]`}>
         <Home />
         <p className="text-[10px] font-medium line-clamp-1">Home</p>
