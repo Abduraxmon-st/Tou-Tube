@@ -1,8 +1,7 @@
 import { Avatar } from "@/components/avatar";
 import { SubscriptionButton } from "@/components/button";
 import { SubscriptionModal } from "@/components/modal";
-import { Button } from "@/components/ui/button";
-import { sidebarSubscriptionsSection } from "@/data/sidebar-links";
+import { sidebarSubscriptionsSection } from "@/data/subscription";
 import { Dot } from "lucide-react";
 import Image from "next/image";
 
@@ -14,25 +13,38 @@ export const SubscriptionsSlugPage = async ({ params }: { params: { slug: string
     );
 
     return (
-        <div className="px-16.25 flex flex-col gap-2">
-            <Image loading="eager" src={subscription?.banner ?? ""} width={856} height={172} alt="Reaktor" className="rounded-3xl w-full h-43" />
-            <div className="flex gap-4 items-center mt-4">
-                <Avatar className="size-40" icon={subscription?.logo ?? ""} />
-                <div className="flex flex-col pt-2">
-                    <h2 className="text-[36px] leading-5.5 font-semibold pb-4">{subscription?.label}</h2>
-                    <div className="flex items-center text-thirdColor pb-2.5">
-                        <h3 className="font-medium text-white uppercase">@{subscription?.slug}</h3>
-                        <Dot size={12} />
-                        <p className="text-[14px] leading-5">{subscription?.subscriptions} subscriptions</p>
-                        <Dot size={12} />
-                        <p className="text-[14px] leading-5">{subscription?.videos} video</p>
+        <div className="px-2 2xm:px-[63px] 2md:px-12 3md:px-16.25 flex flex-col gap-2">
+            <div className="relative w-full h-[65px] 2xm:h-[103px] 2md:h-43 rounded-xl 2xm:rounded-3xl overflow-hidden">
+                <Image src={subscription?.banner ?? ""} fill alt="Reaktor" />
+            </div>
+            <div className="flex gap-4 items-center mt-1.5">
+                <Avatar className="size-18 2xm:size-30 2md:size-40" icon={subscription?.logo ?? ""} />
+                <div className="flex flex-col 2xm:pt-6 2md:pt-2">
+                    <h2 className="text-[24px] 2xm:text-[36px] leading-5.5 font-semibold pb-2 2xm:pb-4">{subscription?.label}</h2>
+                    <div className="flex flex-col 2xm:flex-row items-start 2xm:items-center text-thirdColor 2xm:pb-2.5">
+                        <h3 className="2md:font-medium text-[12px] leading-4.5 2md:text-[14px] 2md:leading-5.5 text-white uppercase">@{subscription?.slug}</h3>
+                        <Dot size={12} className="hidden 2xm:block" />
+                        <div className="flex items-center pt-1 2xm:pt-0">
+                            <p className="text-[12px] leading-4.5 2md:text-[14px] 2md:leading-5">{subscription?.subscriptions} subscriptions</p>
+                            <Dot size={12} />
+                            <p className="text-[12px] leading-4.5 2md:text-[14px] 2md:leading-5">{subscription?.videos} video</p>
+                        </div>
                     </div>
-                    <div className="text-thirdColor flex gap-1">
-                        <h3 className="max-w-[536px] overflow-hidden whitespace-nowrap">{subscription?.description}</h3>
+                    <div className="text-thirdColor hidden 2xm:flex gap-1">
+                        <h3 className="max-w-[402px] 2md:max-w-[470px] text-[12px] leading-4.5 2md:text-[14px] 2md:leading-5 overflow-hidden whitespace-nowrap">{subscription?.description}</h3>
                         <SubscriptionModal subscription={subscription} />
                     </div>
-                    <SubscriptionButton />
+                    <div className="hidden 2md:block">
+                        <SubscriptionButton />
+                    </div>
                 </div>
+            </div>
+            <div className="text-thirdColor flex 2xm:hidden gap-1">
+                <h3 className=" text-[12px] leading-4.5 2md:text-[14px] 2md:leading-5 overflow-hidden whitespace-nowrap">{subscription?.description}</h3>
+                <SubscriptionModal subscription={subscription} />
+            </div>
+            <div className="block 2md:hidden w-full">
+                <SubscriptionButton />
             </div>
         </div>
     )

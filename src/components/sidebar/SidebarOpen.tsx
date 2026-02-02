@@ -1,7 +1,8 @@
-import { otherPossibilities, sidebarLinksSection_1, sidebarLinksSection_2, sidebarLinksSection_3, sidebarSubscriptionsSection } from "@/data/sidebar-links"
+import { otherPossibilities, sidebarLinksSection_1, sidebarLinksSection_2, sidebarLinksSection_3 } from "@/data/sidebar-links"
 import { Separator } from "../ui/separator"
 import { SidebarLink } from "../link"
 import { ChevronRight } from "lucide-react"
+import { sidebarSubscriptionsSection } from "@/data/subscription"
 
 export const SidebarOpen = () => {
   return (

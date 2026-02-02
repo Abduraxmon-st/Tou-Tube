@@ -1,7 +1,6 @@
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
     DialogFooter,
     DialogHeader,
     DialogTitle,
@@ -11,7 +10,7 @@ import { Button } from "../ui/button"
 import { Flag, Forward } from "lucide-react";
 
 type Information = {
-    icon:React.ReactNode;
+    icon: React.ReactNode;
     title: string;
 }
 
@@ -29,18 +28,18 @@ export type SubscriptionItem = {
     description: string;
     icon: React.ReactNode;
     informationIcon: Information[];
-  };
+};
 
-export const SubscriptionModal = ( subscription: SubscriptionItem) => {
+export const SubscriptionModal = ({ subscription }: { subscription: SubscriptionItem | undefined }) => {
     return (
         <Dialog>
-            <DialogTrigger asChild className="">
-                <Button className="bg-transparent hover:bg-transparent pb-4.5 px-0!">…more</Button>
+            <DialogTrigger asChild>
+                <Button className="bg-transparent text-[12px] leading-4.5 2md:text-[14px] 2md:leading-5 hover:bg-transparent pb-6.5 2md:pb-5.5 px-0!">…more</Button>
             </DialogTrigger>
-            <DialogContent className="max-w-[539px] bg-buttonBgColor border-buttonBgColor">
+            <DialogContent className="rounded-2xl bg-buttonBgColor border-buttonBgColor">
                 <DialogHeader>
                     <DialogTitle className="font-semibold text-[20px] leading-7">{subscription?.label}</DialogTitle>
-                    <DialogDescription className="text-white">
+                    <div className="text-white">
                         <div className="flex flex-col gap-2 pt-4">
                             <h2 className="text-[20px] leading-7 font-semibold">Description</h2>
                             <h4 className="text-[14px] leading-5">{subscription?.description}</h4>
@@ -51,20 +50,20 @@ export const SubscriptionModal = ( subscription: SubscriptionItem) => {
                             </div>
                         </div>
                         <div className="mt-4">
-                        <h2 className="text-[20px] leading-7 font-semibold">Additional information</h2>
-                        <ul>
-                            {subscription?.informationIcon.map((icon:Information, index:number) => (
-                                <li key={index} className="flex items-center gap-4 py-2">
-                                    {icon?.icon} {icon?.title}
-                                </li>
-                            ))}
-                        </ul>
+                            <h2 className="text-[20px] leading-7 font-semibold">Additional information</h2>
+                            <ul>
+                                {subscription?.informationIcon?.map((icon: Information, index: number) => (
+                                    <li key={index} className="flex items-center gap-4 py-2">
+                                        {icon?.icon} {icon?.title}
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
-                    </DialogDescription>
-                    <DialogFooter className="flex gap-3  justify-start!">
-                        <Button className="rounded-[18px] w-[196px] bg-secondColor/8"><Forward /> Share channel</Button>
-                        <Button className="rounded-[18px] w-[268px] bg-secondColor/8"><Flag /> Report a user</Button>
-                    </DialogFooter>
+                    </div>
+                    <div className="flex justify-between w-full">
+                        <Button className="rounded-[18px] bg-secondColor/8"><Forward /> Share channel</Button>
+                        <Button className="rounded-[18px] bg-secondColor/8"><Flag /> Report a user</Button>
+                    </div>
                 </DialogHeader>
             </DialogContent>
         </Dialog>
