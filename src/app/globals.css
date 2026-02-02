@@ -24,6 +24,7 @@
 
   --color-selectColor: #282828;
 
+  --breakpoint-5xl: 1990px;
   --breakpoint-xxl: 1312px;
   --breakpoint-3md: 1125px !important;
   --breakpoint-2md: 792px;

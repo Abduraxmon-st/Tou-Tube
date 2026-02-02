@@ -28,7 +28,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/logo.svg" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/logo.svg" type="image/x-icon" />
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes"/>
         <meta
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
