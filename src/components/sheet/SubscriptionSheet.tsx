@@ -1,7 +1,6 @@
-import { shortsSheetButtons } from "@/data/shorts-links"
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet"
 import { Button } from "../ui/button"
-import { Flag, Forward, X } from "lucide-react"
+import { Flag, X } from "lucide-react"
 import { Separator } from "../ui/separator"
 import { Information, SubscriptionItem } from "@/types"
 
