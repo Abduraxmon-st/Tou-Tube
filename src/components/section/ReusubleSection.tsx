@@ -3,7 +3,6 @@ import { Button } from "../ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useRef } from "react";
 import { ReusubleVideosSwiper } from "../swiper";
-import { videos } from "@/data/videos";
 import { Link } from "@/i18n/navigation";
 import { Video } from "@/types";
 type SectionProps = {

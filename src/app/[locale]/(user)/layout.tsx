@@ -74,7 +74,7 @@ export default function UserLayout({
           )}
           <Sidebar />
         </div>
-        <div ref={contentRef} className={`relative ${tabs ? '-mt-28 pt-28' : !short && "pt-14 -mt-14"} z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto pb-14 sm:pb-0 2md:pl-6`}>
+        <div ref={contentRef} className={`relative ${tabs ? '-mt-28 pt-28' : !short && "pt-12 -mt-12 2md:pt-14 2md:-mt-14"} z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto pb-14 sm:pb-0 2md:pl-6`}>
           {children}
         </div>
       </div>

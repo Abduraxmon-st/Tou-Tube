@@ -8,19 +8,21 @@ type MainCardProps = {
   video: Video,
   hover?: boolean,
   videoType: VideoType,
-  ownerVisible?: boolean
+  ownerVisible?: boolean,
+  onHome?: boolean
 }
 export const MainCard = ({
   video,
   hover = true,
   videoType = "classic",
-  ownerVisible = true
+  ownerVisible = true,
+  onHome = true,
 }: MainCardProps) => {
   return (
     <Card className="relative bg-transparent border-0 py-0! gap-0 shadow-none rounded-none text-secondColor cursor-pointer group">
       <div className={`absolute z-3 size-full scale-100 group-hover:scale-x-106 group-hover:scale-y-108  ${hover && video.hover_color} rounded-xl transition-all duration-300 ease-in-out`} />
       <div className="relative z-4">
-        <div className="relative aspect-video sm:rounded-xl overflow-hidden">
+        <div className={`relative aspect-video overflow-hidden ${onHome ? "sm:rounded-xl" : "rounded-xl"}`}>
           <Image loading="eager" width={1024} height={480} src={video.cover_image} alt={video.title} />
           <span className="absolute bottom-2 right-2 text-sm sm:text-[13px] font-medium bg-mainColor/70 px-1 py-0.5 rounded-[5px]">{video.time}</span>
         </div>

@@ -12,18 +12,18 @@ const liked = videos(30)
 
 const YouPage = () => {
   return (
-    <div className="pr-4 pb-4">
+    <div className="pr-4 pl-4 2md:pl-0 pb-4">
       {/* header account info */}
       <div className="flex items-center gap-4">
-        <Avatar icon="https://i.pravatar.cc/150?img=3" className="size-29 m-0.5" />
+        <Avatar icon="https://i.pravatar.cc/150?img=3" className="size-24 2md:size-29 m-2 2md:m-0.5" />
         <div className="flex flex-col">
-          <h2 className="text-[36px] font-bold">Frontend user</h2>
-          <div className="text-thirdColor">
+          <h2 className="text-2xl 2md:text-[36px] font-bold">Frontend user</h2>
+          <div className="text-thirdColor text-sm 2md:text-base">
             <span>@User_1212</span>{" "}
             <span>•</span>{" "}
             <span>Go to the channel</span>
           </div>
-          <div className="flex gap-2 mt-3 mb-2">
+          <div className="flex gap-2 mt-2 2md:mt-3 mb-2">
             <Button variant={'iconVariant'} className="[&_svg:not([class*='size-'])]:size-4.5 bg-buttonBgColor pl-3! pr-4!">
               <BookUser />
               <p>Change Account</p>
