@@ -32,7 +32,12 @@ export const ReusubleVideosSwiper = ({ prevRef, nextRef, videos }: SwiperNavRefs
         spaceBetween={16}
         slidesPerView={2}
         slidesPerGroup={2}
+        grabCursor={true}
         breakpoints={{
+          1: {
+            slidesPerView: 2.2,
+            slidesPerGroup: 1
+          },
           1024: {
             slidesPerView: 4,
             slidesPerGroup: 4
@@ -42,12 +47,12 @@ export const ReusubleVideosSwiper = ({ prevRef, nextRef, videos }: SwiperNavRefs
             slidesPerGroup: 5
           }
         }}
-        className="w-full p-0!"
+        className="w-full p-0! px-4! 2xm:px-0!"
       >
         {
           videos.map((video) => (
             <SwiperSlide key={video.id}>
-              <MainCard video={video} hover={false} videoType="history" ownerVisible={false}/>
+              <MainCard video={video} hover={false} videoType="history" ownerVisible={false} onHome={false}/>
             </SwiperSlide>
           ))
         }

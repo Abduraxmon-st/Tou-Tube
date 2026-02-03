@@ -1,14 +1,16 @@
-import { Cast, Mic, Search } from "lucide-react"
+import { Cast, Mic, Search, Settings } from "lucide-react"
 import { Button } from "../ui/button"
 import useStore from "@/context/store"
 import { useState } from "react"
 import { VoiceModal } from "../modal"
 import { NotificationMenu } from "../menu"
+import { Link } from "@/i18n/navigation"
 interface MobileSearchProps {
   open: boolean,
   setOpen: (value: boolean) => void
+  youPage: boolean
 }
-export const MobileSearchMenu = ({ open, setOpen }: MobileSearchProps) => {
+export const MobileSearchMenu = ({ open, setOpen, youPage }: MobileSearchProps) => {
   const [_query, setQuery] = useState("")
   const { microToggle, setMicroToggle } = useStore()
 
@@ -32,7 +34,14 @@ export const MobileSearchMenu = ({ open, setOpen }: MobileSearchProps) => {
           className="flex items-center justify-center size-max! [&_svg:not([class*='size-'])]:size-6 rounded-full p-2! ml-1 bg-transparent!">
           <Search />
         </Button>
-
+        {youPage &&
+          <Link href='/settings'>
+            <Button
+              className="flex items-center justify-center size-max! [&_svg:not([class*='size-'])]:size-6 rounded-full p-2! ml-1 bg-transparent!">
+              <Settings />
+            </Button>
+          </Link>
+        }
         <Button
           variant="iconVariant"
           type="button"
