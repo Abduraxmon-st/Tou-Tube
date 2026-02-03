@@ -15,7 +15,7 @@ export const SubscriptionSheet = ({ subscription }: { subscription: Subscription
                 <SheetTitle className="flex items-center justify-between px-3! pb-3">
                     <p className="text-[18px] leading-6.5 font-semibold text-white">{subscription?.label}</p>
                     <SheetClose>
-                        <Button variant="iconVariant" className="[&_svg:not([class*='size-'])]:size-5.5 text-white -mr-2"><X /></Button>
+                        <div className="[&_svg:not([class*='size-'])]:size-5.5 text-white -mr-2"><X /></div>
                     </SheetClose>
                 </SheetTitle>
                 <Separator />
