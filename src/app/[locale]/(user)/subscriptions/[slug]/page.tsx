@@ -15,8 +15,8 @@ export const SubscriptionsSlugPage = async ({ params }: { params: { slug: string
     );
 
     return (
-        <div className="px-2 2xm:px-[63px] 2md:px-12 3md:px-16.25 flex flex-col gap-2">
-            <div className="relative w-full h-[65px] 2xm:h-[103px] 2md:h-43 rounded-xl 2xm:rounded-3xl overflow-hidden">
+        <div className="px-2 2xm:px-15.75 2md:px-12 3md:px-16.25 flex flex-col gap-2">
+            <div className="relative w-full h-16.25 2xm:h-25.75 2md:h-43 rounded-xl 2xm:rounded-3xl overflow-hidden">
                 <Image src={subscription?.banner ?? ""} fill alt="Reaktor" />
             </div>
             <div className="flex gap-4 items-center mt-1.5">
@@ -33,7 +33,7 @@ export const SubscriptionsSlugPage = async ({ params }: { params: { slug: string
                         </div>
                     </div>
                     <div className="text-thirdColor hidden 2xm:flex gap-1">
-                        <h3 className="max-w-[402px] 2md:max-w-[470px] text-[12px] leading-4.5 2md:text-[14px] 2md:leading-5 overflow-hidden whitespace-nowrap">{subscription?.description}</h3>
+                        <h3 className="max-w-100.5 2md:max-w-117.5 text-[12px] leading-4.5 2md:text-[14px] 2md:leading-5 overflow-hidden whitespace-nowrap">{subscription?.description}</h3>
                         <SubscriptionModal subscription={subscription} />
                     </div>
                     <div className="hidden 2md:block">
