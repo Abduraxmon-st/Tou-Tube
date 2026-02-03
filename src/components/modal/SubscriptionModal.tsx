@@ -1,34 +1,13 @@
 import {
     Dialog,
     DialogContent,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from "../ui/button"
 import { Flag, Forward } from "lucide-react";
-
-type Information = {
-    icon: React.ReactNode;
-    title: string;
-}
-
-export type SubscriptionItem = {
-    label: string;
-    slug: string;
-    logo: string;
-    banner: string;
-    path: string;
-    subscriptions: string;
-    videos: string;
-    cardNumber: string;
-    name: string;
-    reklamaLink: string;
-    description: string;
-    icon: React.ReactNode;
-    informationIcon: Information[];
-};
+import { Information, SubscriptionItem } from "@/types";
 
 export const SubscriptionModal = ({ subscription }: { subscription: SubscriptionItem | undefined }) => {
     return (

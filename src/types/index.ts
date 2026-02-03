@@ -81,3 +81,24 @@ export type VideoTypeProps = {
   buttonClass?: string;
   align?: "center" | "start" | "end"
 };
+
+export type Information = {
+  icon: React.ReactNode;
+  title: string;
+}
+
+export type SubscriptionItem = {
+  label: string;
+  slug: string;
+  logo: string;
+  banner: string;
+  path: string;
+  subscriptions: string;
+  videos: string;
+  cardNumber: string;
+  name: string;
+  reklamaLink: string;
+  description: string;
+  icon: React.ReactNode;
+  informationIcon: Information[];
+};
