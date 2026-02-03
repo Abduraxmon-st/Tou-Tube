@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react"
 import { Button } from "../ui/button"
 import { SubscriptionSelect } from "../select"
-import { Divide } from "lucide-react"
 
 export const SubscriptionButton = () => {
   const [subs, setSubs] = useState<boolean>(() => {

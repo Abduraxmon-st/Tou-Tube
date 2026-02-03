@@ -1,6 +1,8 @@
+"use client"
 import { Avatar } from "@/components/avatar";
 import { SubscriptionButton } from "@/components/button";
 import { SubscriptionModal } from "@/components/modal";
+import { SubscriptionSheet } from "@/components/sheet";
 import { sidebarSubscriptionsSection } from "@/data/subscription";
 import { Dot } from "lucide-react";
 import Image from "next/image";
@@ -41,7 +43,7 @@ export const SubscriptionsSlugPage = async ({ params }: { params: { slug: string
             </div>
             <div className="text-thirdColor flex 2xm:hidden gap-1">
                 <h3 className=" text-[12px] leading-4.5 2md:text-[14px] 2md:leading-5 overflow-hidden whitespace-nowrap">{subscription?.description}</h3>
-                <SubscriptionModal subscription={subscription} />
+                <SubscriptionSheet subscription={subscription} />
             </div>
             <div className="block 2md:hidden w-full">
                 <SubscriptionButton />
