@@ -32,7 +32,7 @@ export const MainCard = ({
           <div className="flex-1 relative pr-4 2xm:pr-6">
             <h2 className="font-medium line-clamp-2">{video.title}</h2>
             <p className="hidden xm:block text-thirdColor text-sm">{video.owner}</p>
-            <VideosSelect videoType={videoType} buttonClass="absolute -top-2 -right-1 sm:-right-5.5" />
+            <VideosSelect videoType={videoType} buttonClass="absolute -top-2 right-0 sm:-right-5.5" />
             <div className="text-thirdColor text-sm xm:hidden! line-clamp-1">
               <span className="text-thirdColor text-sm">{video.owner}</span>
               <span>{" "}•{" "}</span>
