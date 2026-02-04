@@ -7,7 +7,7 @@ export const MysubscriptionCarousel = () => {
     const pathname = usePathname()
 
     return (
-        <div className="flex">
+        <div className="flex 2xm:hidden">
             <div className={`${pathname === "/subscriptions" ? "" : "hidden"} flex gap-3 pl-2 w-full overflow-auto`}>
                 {sidebarSubscriptionsSection.map((subscription: SubscriptionItem, index) => (
                     <div key={index}>
@@ -16,7 +16,7 @@ export const MysubscriptionCarousel = () => {
                     </div>
                 ))}
             </div>
-           <Link href="/mysubscriptions" className={`${pathname === "/subscriptions" ? "" : "hidden"} w-10 flex pt-5 border justify-center text-blue-500`}>All</Link>
+           <Link href="/mysubscriptions" className={`${pathname === "/subscriptions" ? "" : "hidden"} w-10 flex pt-5 justify-center text-blue-500`}>All</Link>
         </div>
     )
 }
