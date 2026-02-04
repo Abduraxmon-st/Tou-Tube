@@ -24,7 +24,7 @@ const SubscriptionsPage = () => {
           </div>
         </div>
       </div>
-      <div className={viewMode === 'grid' ? 'grid grid-cols-3 gap-4 mt-3' : ''}>
+      <div className={viewMode === 'grid' ? 'grid grid-cols-1 2xm:grid-cols-2 2md:grid-cols-3 gap-4 mt-3' : ''}>
         {videosSection_1.map((item) =>
           viewMode === 'grid' ? (
             <MainCard key={item.id} video={item} hover={false}  />
