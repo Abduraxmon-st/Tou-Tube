@@ -1,3 +1,4 @@
 export * from './SidebarSheet'
 export * from './ShortSheet'
 export * from './SubscriptionSheet'
+export * from './SettingsSheet'

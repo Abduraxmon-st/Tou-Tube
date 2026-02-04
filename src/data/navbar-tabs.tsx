@@ -44,3 +44,34 @@ export const youPageTabs = [
     icon: <ShareIcon />
   },
 ]
+
+export const subscriptionsTabs = [
+  {
+    label:"All", 
+    active:true
+  },
+  {
+    label:"For today" 
+  },
+  {
+    label:"Video" 
+  },
+  {
+    label:"Shorts" 
+  },
+  {
+    label:"Now on air" 
+  },
+  {
+    label:"Podcasts" 
+  },
+  {
+    label:"Records" 
+  },
+  {
+    label:"Not examined"
+  },
+  {
+    label:"Not viewed" 
+  }
+]
