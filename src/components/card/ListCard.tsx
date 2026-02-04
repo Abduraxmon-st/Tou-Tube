@@ -1,22 +1,19 @@
-import { videos } from "@/data/videos";
 import { Avatar } from "../avatar";
 import Image from "next/image";
 import { VideosSelect } from "../select";
-import { VideoType } from "@/types";
+import { Video, VideoType } from "@/types";
 import { Card } from "../ui/card";
-const videosSection_1 = videos(3)
 interface ListCardProps {
     viewMode?: 'grid' | 'list';
     videoType?: VideoType,
     ownerVisible?: boolean,
+    video: Video
 }
-export const ListCard = ({ viewMode = 'grid', videoType = "classic", ownerVisible }: ListCardProps) => {
+export const ListCard = ({ viewMode = 'grid', videoType = "classic", ownerVisible, video }: ListCardProps) => {
     return (
-        <div className={` gap-x-3 gap-y-7.5 xm:gap-y-5 w-full mt-3 ${viewMode === 'list' ? 'flex flex-col' : 'grid grid-cols-1 sm:grid-cols-2 3md:grid-cols-3!'
-            }`}>
-            {videosSection_1.map((video: any, index) => (  
-                <Card key={index} className="relative bg-transparent border-0 py-0! gap-0 shadow-none rounded-none text-secondColor cursor-pointer">
-                    <div className={`relative ${viewMode === 'list' ? 'flex' : 'w-full'}`}>
+        <div className={` gap-x-3 gap-y-7.5 xm:gap-y-5 w-full mt-3 ${viewMode === 'list' && 'flex flex-col'}`}>
+                <Card className="relative bg-transparent border-0 py-0! gap-0 shadow-none rounded-none text-secondColor cursor-pointer">
+                    <div className={`relative ${viewMode === 'list' && 'flex'}`}>
                         <div className={`relative aspect-video overflow-hidden rounded-xl`}>
                             <Image loading="eager" width={1024} height={480} src={video.cover_image} alt={video.title} className={`${viewMode === 'list' && "w-61.5"}`} />
                             <span className="absolute bottom-2 right-2 text-sm sm:text-[13px] font-medium bg-mainColor/70 px-1 py-0.5 rounded-[5px]">{video.time}</span>
@@ -44,7 +41,6 @@ export const ListCard = ({ viewMode = 'grid', videoType = "classic", ownerVisibl
                         </div>
                     </div>
                 </Card>
-            ))}
         </div>
     )
 }
