@@ -2,12 +2,11 @@ import { Video, VideoType } from "@/types"
 import { Avatar } from "../avatar"
 import { Card } from "../ui/card"
 import Image from "next/image"
-import { Button } from "../ui/button"
 import { VideosSelect } from "../select"
 type MainCardProps = {
   video: Video,
   hover?: boolean,
-  videoType: VideoType,
+  videoType?: VideoType,
   ownerVisible?: boolean,
   onHome?: boolean
 }

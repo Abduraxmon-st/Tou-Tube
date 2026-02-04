@@ -1,10 +1,11 @@
 "use client"
-import { ListCard } from "@/components/card"
+import { ListCard, MainCard } from "@/components/card"
 import { Button } from "@/components/ui/button"
+import { videos } from "@/data/videos"
 import { Link } from "@/i18n/navigation"
 import { Grid3X3, List } from "lucide-react"
 import { useState } from "react"
-
+const videosSection_1 = videos(3)
 const SubscriptionsPage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   return (
@@ -23,7 +24,15 @@ const SubscriptionsPage = () => {
           </div>
         </div>
       </div>
-      <ListCard viewMode={viewMode} />
+      <div className={viewMode === 'grid' ? 'grid grid-cols-3 gap-4 mt-3' : ''}>
+        {videosSection_1.map((item) =>
+          viewMode === 'grid' ? (
+            <MainCard key={item.id} video={item} hover={false}  />
+          ) : (
+            <ListCard key={item.id} video={item} viewMode={viewMode} />
+          )
+        )}
+      </div>
     </div>
   )
 }
