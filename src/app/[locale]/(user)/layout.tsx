@@ -1,4 +1,5 @@
 "use client"
+import { MysubscriptionCarousel } from "@/components/carousel";
 import { Navbar, ShortNavbar } from "@/components/navbar";
 import { MobileNavigation } from "@/components/navigation";
 import { Sidebar } from "@/components/sidebar";
@@ -63,6 +64,7 @@ export default function UserLayout({
     <div className="h-dvh max-h-dvh overflow-hidden">
       <div ref={navbarRef} className="relative z-10 sm:mr-1.5 backdrop-blur-3xl bg-mainColor/80 border-b sm:border-b-0 border-buttonBgColor transition-transform duration-200 ease-in-out">
         {!short ? <Navbar /> : <ShortNavbar />}
+        <MysubscriptionCarousel />
         {tabs && <NavbarTabs />}
       </div>
       <div className="2md:flex">

@@ -3,6 +3,7 @@ import { Separator } from "../ui/separator"
 import { SidebarLink } from "../link"
 import { ChevronRight } from "lucide-react"
 import { sidebarSubscriptionsSection } from "@/data/subscription"
+import { Link } from "@/i18n/navigation"
 
 export const SidebarOpen = () => {
   return (
@@ -16,10 +17,10 @@ export const SidebarOpen = () => {
         <Separator />
 
         <div className="p-3">
-          <div className="flex items-center gap-2 px-3 h-10 hover:bg-buttonBgColor rounded-[10px]">
+          <Link href="/subscriptions" className="flex items-center gap-2 px-3 h-10 hover:bg-buttonBgColor rounded-[10px]">
             <p className="font-semibold">Subscriptions</p>
             <ChevronRight size={16} />
-          </div>
+          </Link>
 
           {sidebarSubscriptionsSection.map((item, index) => (
             <SidebarLink key={item.label + index} item={item} />
