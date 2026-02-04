@@ -29,7 +29,7 @@ const SubscriptionsPage = () => {
           viewMode === 'grid' ? (
             <MainCard key={item.id} video={item} hover={false}  />
           ) : (
-            <ListCard key={item.id} video={item} viewMode={viewMode} />
+            <ListCard key={item.id} video={item}  />
           )
         )}
       </div>
