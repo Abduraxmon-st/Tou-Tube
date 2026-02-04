@@ -1,3 +1,4 @@
 export * from './MainCard'
 export * from './ShortsCard'
 export * from './ShortsCardMobile'
+export * from './ListCard'
