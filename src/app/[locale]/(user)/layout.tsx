@@ -6,6 +6,7 @@ import { Sidebar } from "@/components/sidebar";
 import { NavbarTabs } from "@/components/tabs";
 import { SidebarToggle } from "@/components/toggle";
 import { isTablet } from "@/constants";
+import useStore from "@/context/store";
 import { usePathname } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
 
@@ -18,18 +19,18 @@ export default function UserLayout({
   const contentRef = useRef<HTMLDivElement>(null);
   const navbarRef = useRef<HTMLDivElement>(null);
   const lastScrollTop = useRef(0);
-  const [tabs, setTabs] = useState(true)
-  const [short, setShort] = useState(false)
+  const [inHome, setInHome] = useState(true)
+  const { inShorts, setInShorts } = useStore()
   const [inSubscriptionsPage, setInSubscriptionsPage] = useState(false)
   const navbarHeight = inSubscriptionsPage ? 120 : 174
   useEffect(() => {
     if (pathname !== "/") {
-      setTabs(false)
-    } else setTabs(true)
+      setInHome(false)
+    } else setInHome(true)
 
     if (pathname === "/shorts") {
-      setShort(true)
-    } else setShort(false)
+      setInShorts(true)
+    } else setInShorts(false)
 
     if (pathname === "/subscriptions") {
       setInSubscriptionsPage(true)
@@ -68,25 +69,27 @@ export default function UserLayout({
 
   return (
     <div className="h-dvh max-h-dvh overflow-hidden">
-      <div ref={navbarRef} className="relative z-10 sm:mr-1.5 backdrop-blur-3xl bg-mainColor/80 border-b sm:border-b-0 border-buttonBgColor transition-transform duration-200 ease-in-out">
-        {!short ? <Navbar /> : <ShortNavbar />}
-        {tabs && <NavbarTabs />}
+      <div ref={navbarRef} className="fixed top-0 left-0 w-screen 2md:w-[calc(100vw-6px)] z-10 sm:mr-1.5 backdrop-blur-3xl bg-mainColor/80 border-b sm:border-b-0 border-buttonBgColor transition-transform duration-200 ease-in-out">
+        {inShorts ? <ShortNavbar /> : <Navbar />}
+        {inHome && <NavbarTabs />}
         {inSubscriptionsPage && <MysubscriptionCarousel />}
       </div>
       <div className="2md:flex">
-        <div className={`hidden sm:block z-10 ${tabs && "-mt-14"}`}>
-          {short && (
+        <div className={`hidden 2md:block z-11 ${inShorts ? "mt-0" : "mt-14"}`}>
+          {inShorts && (
             <div className="hidden 2md:block pl-4 pt-3">
               <SidebarToggle />
             </div>
           )}
-          <Sidebar />
+          <div className="sidebarScrollBar h-[calc(100vh-56px)] w-max overflow-y-auto">
+            <Sidebar />
+          </div>
         </div>
-        <div ref={contentRef} className={`relative ${tabs ? '-mt-28 pt-28' : !short && "pt-12 -mt-12 2md:pt-14 2md:-mt-14"} z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto pb-14 sm:pb-0 2md:pl-6`}>
+        <div ref={contentRef} className={`relative z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto  2md:pl-6 ${!inShorts && "pt-14 pb-14 2md:pb-0"}`}>
           {children}
         </div>
       </div>
-      <MobileNavigation />
+      {isTablet && <MobileNavigation />}
     </div>
   );
 }

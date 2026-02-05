@@ -172,7 +172,7 @@
   display: block !important;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 792px) {
   ::-webkit-scrollbar {
     display: none;
   }

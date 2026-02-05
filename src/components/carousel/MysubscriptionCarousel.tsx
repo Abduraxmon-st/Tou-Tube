@@ -7,12 +7,12 @@ import { SubscriptionsTabs } from "../tabs"
 export const MysubscriptionCarousel = () => {
     return (
         <>
-            <div className="flex">
-                <div className="flex gap-3 pl-2 w-full">
+            <div className="flex 2md:hidden px-3 sm:px-4">
+                <div className="flex gap-3 w-full mb-1">
                     {sidebarSubscriptionsSection.map((subscription: SubscriptionItem) => (
                         <div key={subscription.label}>
                             <Avatar className="size-14" icon={subscription?.logo} />
-                            <p className="max-w-[8ch] truncate">{subscription?.label}</p>
+                            <p className="text-sm max-w-[8ch] truncate pt-1">{subscription?.label}</p>
                         </div>
                     ))}
                 </div>

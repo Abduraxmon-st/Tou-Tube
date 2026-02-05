@@ -3,7 +3,6 @@ import { Link, usePathname } from "@/i18n/navigation"
 import { SidebarToggle } from "../toggle"
 import { Logo } from "../logo"
 import { MobileSearchMenu } from "../search"
-import NavbarRight from "./NavbarRight"
 import { useEffect, useState } from "react"
 
 interface MobileNavbarProps {
@@ -27,7 +26,6 @@ export const MobileNavbar = ({ open, setOpen }: MobileNavbarProps) => {
         <Link href="/"><Logo className="py-2.5 px-4 text-lg! [&>img]:size-7" /></Link>
       </div>}
       <MobileSearchMenu open={open} setOpen={setOpen} youPage={youPage} />
-      <NavbarRight />
     </div>
   )
 }

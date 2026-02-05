@@ -28,7 +28,6 @@ export const VideosSelect = ({
           <SheetTitle className="hidden">
           </SheetTitle>
           <div className="bg-thirdColor/25 w-[10%] h-1 mx-auto my-1.5 rounded-full" />
-
           {select.map((button) => (
             <Button key={button.label} className="w-full! justify-start px-3.5! h-10! max-h-14! gap-5 bg-transparent! active:bg-thirdColor/20! [&_svg:not([class*='size-'])]:size-6 rounded-none text-base! text-wrap! text-start">
               {button.icon}

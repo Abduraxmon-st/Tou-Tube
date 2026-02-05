@@ -15,7 +15,7 @@ export const ShortsSwiper = () => {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className="relative max-h-dvh hidden sm:grid pt-2">
+    <div className="relative max-h-dvh hidden sm:grid pb-14 md:pb-0">
       <Button ref={prevRef} variant="iconVariant" className="absolute top-1/2 right-3 lg:right-6 z-9 bg-buttonBgColor p-2 lg:p-4! duration-300 prev-btn"><ArrowUp /></Button>
       <Button ref={nextRef} variant="iconVariant" className="absolute top-1/2 -translate-y-[50%] right-3 lg:right-6 z-9 bg-buttonBgColor p-2 lg:p-4! duration-300 next-btn"><ArrowDown /></Button>
 
@@ -50,7 +50,7 @@ export const ShortsSwiper = () => {
         //     slidesPerView: 1.02
         //   }
         // }}
-        className="w-full p-0! shorts-swiper"
+        className="w-full p-0! shorts-swiper pt-2!"
       >
         {
           shortVideos.map((short) => (
