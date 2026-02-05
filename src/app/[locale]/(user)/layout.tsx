@@ -20,6 +20,8 @@ export default function UserLayout({
   const lastScrollTop = useRef(0);
   const [tabs, setTabs] = useState(true)
   const [short, setShort] = useState(false)
+  const [inSubscriptionsPage, setInSubscriptionsPage] = useState(false)
+  const navbarHeight = inSubscriptionsPage ? 120 : 174
   useEffect(() => {
     if (pathname !== "/") {
       setTabs(false)
@@ -28,6 +30,10 @@ export default function UserLayout({
     if (pathname === "/shorts") {
       setShort(true)
     } else setShort(false)
+
+    if (pathname === "/subscriptions") {
+      setInSubscriptionsPage(true)
+    } else setInSubscriptionsPage(false)
   }, [pathname])
 
   useEffect(() => {
@@ -50,7 +56,7 @@ export default function UserLayout({
 
       navbarRef.current!.style.transform =
         st > lastScrollTop.current
-          ? "translateY(-120px)"
+          ? `translateY(-${navbarHeight}px)`
           : "translateY(0)";
 
       lastScrollTop.current = st;
@@ -64,8 +70,8 @@ export default function UserLayout({
     <div className="h-dvh max-h-dvh overflow-hidden">
       <div ref={navbarRef} className="relative z-10 sm:mr-1.5 backdrop-blur-3xl bg-mainColor/80 border-b sm:border-b-0 border-buttonBgColor transition-transform duration-200 ease-in-out">
         {!short ? <Navbar /> : <ShortNavbar />}
-        <MysubscriptionCarousel />
         {tabs && <NavbarTabs />}
+        {inSubscriptionsPage && <MysubscriptionCarousel />}
       </div>
       <div className="2md:flex">
         <div className={`hidden sm:block z-10 ${tabs && "-mt-14"}`}>

@@ -75,3 +75,21 @@ export const subscriptionsTabs = [
     label:"Not viewed" 
   }
 ]
+
+export const playlistTabs = [
+  {
+    label: "Playlists",
+  },
+  {
+    label: "Music"
+  },
+  {
+    label: "Jams"
+  },
+  {
+    label: "Yours"
+  },
+  {
+    label: "Saved"
+  }
+]

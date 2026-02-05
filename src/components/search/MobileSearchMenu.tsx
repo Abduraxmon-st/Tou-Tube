@@ -19,7 +19,7 @@ export const MobileSearchMenu = ({ open, setOpen, youPage }: MobileSearchProps) 
   // }
   return (
     <>
-      <div className="flex flex-1 justify-end">
+      <div className="flex flex-1 justify-end items-center">
         <Button
           variant="iconVariant"
           type="button"
@@ -37,7 +37,7 @@ export const MobileSearchMenu = ({ open, setOpen, youPage }: MobileSearchProps) 
         {youPage &&
           <Link href='/settings'>
             <Button
-              className="flex items-center justify-center size-max! [&_svg:not([class*='size-'])]:size-6 rounded-full p-2! ml-1 bg-transparent!">
+              className="flex items-center justify-center size-max! [&_svg:not([class*='size-'])]:size-6 rounded-full p-2! ml-1 my-1 bg-transparent!">
               <Settings />
             </Button>
           </Link>

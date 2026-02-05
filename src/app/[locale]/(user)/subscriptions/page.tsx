@@ -6,7 +6,7 @@ import { videos } from "@/data/videos"
 import { Link } from "@/i18n/navigation"
 import { useState } from "react"
 
-const videosSection_1 = videos(3)
+const videosSection_1 = videos(10)
 const SubscriptionsPage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   return (

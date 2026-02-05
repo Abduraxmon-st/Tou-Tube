@@ -29,10 +29,10 @@ export const SidebarOpen = () => {
         <Separator />
 
         <div className="p-3">
-          <div className="flex items-center gap-2 px-3 h-10 hover:bg-buttonBgColor rounded-[10px]">
+          <Link href="/you" className="flex items-center gap-2 px-3 h-10 hover:bg-buttonBgColor rounded-[10px]">
             <p className="font-semibold">You</p>
             <ChevronRight size={16} />
-          </div>
+          </Link>
           {sidebarLinksSection_2.map((item) => (
             <SidebarLink key={item.label} item={item} />
           ))}
