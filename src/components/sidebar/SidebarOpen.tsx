@@ -7,7 +7,7 @@ import { Link } from "@/i18n/navigation"
 
 export const SidebarOpen = () => {
   return (
-    <div className="w-60 h-max overflow-x-hidden">
+    <div className="max-w-60 h-max overflow-x-hidden">
       <div className="p-3">
         {sidebarLinksSection_1.map((item) => (
           <SidebarLink key={item.label} item={item} />

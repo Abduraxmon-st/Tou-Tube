@@ -14,7 +14,7 @@ export const ListCard = ({ videoType = "classic", ownerVisible, video }: ListCar
                 <Card className="relative bg-transparent border-0 py-0! gap-0 shadow-none rounded-none text-secondColor cursor-pointer">
                     <div className="relative flex gap-2">
                         <div className={`relative aspect-video overflow-hidden rounded-xl max-w-[45%] xl:max-w-125`}>
-                            <Image loading="eager" width={1024} height={480} src={video.cover_image} alt={video.title} className="size-full object-cover" />
+                            <Image loading="lazy" width={1024} height={480} src={video.cover_image} alt={video.title} className="size-full object-cover" />
                             <span className="absolute bottom-2 right-2 text-sm sm:text-[13px] font-medium bg-mainColor/70 px-1 py-0.5 rounded-[5px]">{video.time}</span>
                         </div>
 

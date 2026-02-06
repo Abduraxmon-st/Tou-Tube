@@ -81,7 +81,7 @@ export default function UserLayout({
               <SidebarToggle />
             </div>
           )}
-          <div className="sidebarScrollBar h-[calc(100vh-56px)] w-max overflow-y-auto">
+          <div className="sidebarScrollBar h-[calc(100vh-56px)] overflow-y-auto">
             <Sidebar />
           </div>
         </div>

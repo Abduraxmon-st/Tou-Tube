@@ -7,7 +7,7 @@ export const ShortsCard = ({ short }: { short: Short }) => {
   return (
     <Card className="relative bg-transparent border-0 py-0! gap-0 shadow-none rounded-none text-secondColor cursor-pointer">
       <div className="relative rounded-md overflow-hidden aspect-[0.664]">
-        <Image loading="eager" width={360} height={480} src={short.cover_image} alt={short.title} className="size-full object-cover" />
+        <Image loading="lazy" width={360} height={480} src={short.cover_image} alt={short.title} className="size-full object-cover" />
       </div>
       <div className="py-2 pr-9">
         <div className="relative">

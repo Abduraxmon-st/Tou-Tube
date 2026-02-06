@@ -102,3 +102,12 @@ export type SubscriptionItem = {
   icon: React.ReactNode;
   informationIcon: Information[];
 };
+
+export type Playlist = {
+  id: number;
+  cover_image: string;
+  title: string;
+  owner: string;
+  type: string;
+  time: string;
+};

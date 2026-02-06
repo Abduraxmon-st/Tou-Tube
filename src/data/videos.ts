@@ -1,4 +1,3 @@
-import { Video } from "@/types";
 const hoverBgMap = [
   "group-hover:bg-blue-500/15",
   "group-hover:bg-green-500/15",
