@@ -2,18 +2,19 @@
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
-import { Video } from "@/types";
-import { MainCard } from "../card";
+import { Playlist, Video } from "@/types";
+import { MainCard, PlaylistCard } from "../card";
 import { RefObject } from "react";
 
 
 type SwiperNavRefs = {
   prevRef: RefObject<HTMLButtonElement | null>;
   nextRef: RefObject<HTMLButtonElement | null>;
-  videos: Video[];
+  videos: Video[] | Playlist[];
+  type?: "playlist" | "classic"
 };
 
-export const ReusubleVideosSwiper = ({ prevRef, nextRef, videos }: SwiperNavRefs) => {
+export const ReusubleVideosSwiper = ({ prevRef, nextRef, videos, type = "classic" }: SwiperNavRefs) => {
 
   return (
     <div className="relative grid">
@@ -52,7 +53,13 @@ export const ReusubleVideosSwiper = ({ prevRef, nextRef, videos }: SwiperNavRefs
         {
           videos.map((video) => (
             <SwiperSlide key={video.id}>
-              <MainCard video={video} hover={false} videoType="history" ownerVisible={false} onHome={false}/>
+              {
+                type === "classic" ? (
+                  <MainCard video={video as Video} hover={false} videoType="history" ownerVisible={false} onHome={false} />
+                ) : (
+                  <PlaylistCard playlist={video as Playlist} hover={false} />
+                )
+              }
             </SwiperSlide>
           ))
         }

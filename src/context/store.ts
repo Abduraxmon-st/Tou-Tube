@@ -9,6 +9,8 @@ export interface Store {
   setMicroToggle: (value: boolean) => void;
   inShorts: boolean;
   setInShorts: (value: boolean) => void;
+  inSubSlug: boolean;
+  setInSubSlug: (value: boolean) => void;
 }
 
 const useStore = create<Store>()(
@@ -17,6 +19,7 @@ const useStore = create<Store>()(
       sidebarToggle: isNotDescktop ? false : true,
       microToggle: false,
       inShorts: false,
+      inSubSlug: false,
 
       setInShorts: (inShorts) =>
         set({ inShorts }),
@@ -25,7 +28,10 @@ const useStore = create<Store>()(
         set({ sidebarToggle }),
 
       setMicroToggle: (microToggle) =>
-        set({ microToggle })
+        set({ microToggle }),
+
+      setInSubSlug: (inSubSlug) =>
+        set({ inSubSlug }),
     }),
 
     {

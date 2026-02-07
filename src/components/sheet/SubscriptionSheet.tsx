@@ -14,12 +14,9 @@ export const SubscriptionSheet = ({ subscription }: { subscription: Subscription
                 <div className="bg-thirdColor/25 w-[10%] h-1 mx-auto my-1.5 rounded-full" />
                 <SheetTitle className="flex items-center justify-between px-3! pb-3">
                     <p className="text-[18px] leading-6.5 font-semibold text-white">{subscription?.label}</p>
-                    <SheetClose>
-                        <div className="[&_svg:not([class*='size-'])]:size-5.5 text-white -mr-2"><X /></div>
-                    </SheetClose>
                 </SheetTitle>
                 <Separator />
-                <div className="text-white overflow-y-auto max-h-83 px-3.5">
+                <div className="text-white overflow-y-auto max-h-120 px-3.5">
                     <div className="flex flex-col gap-2 pt-4">
                         <h2 className="text-[18px] leading-6.5 font-semibold">Description</h2>
                         <h4 className="text-[14px] leading-5">{subscription?.description}</h4>

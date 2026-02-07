@@ -3,19 +3,23 @@ import { Avatar } from "@/components/avatar";
 import { SubscriptionButton } from "@/components/button";
 import { SubscriptionModal } from "@/components/modal";
 import { SubscriptionSheet } from "@/components/sheet";
+import useStore from "@/context/store";
 import { sidebarSubscriptionsSection } from "@/data/subscription";
 import { Dot } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
+import { useEffect } from "react";
 
 export const SubscriptionsSlugPage = () => {
     const params = useParams();
     const slug = params.slug as string;
-
+    const { setInSubSlug } = useStore()
     const subscription = sidebarSubscriptionsSection.find(
         (item) => item.slug === slug
     );
-
+    useEffect(() => {
+        setInSubSlug(true)
+    }, [slug])
     return (
         <div className="px-4 2xm:px-15.75 2md:px-12 3md:px-16.25 flex flex-col gap-3">
             <div className="relative w-full h-25.75 2md:h-43 rounded-xl 2xm:rounded-3xl overflow-hidden">

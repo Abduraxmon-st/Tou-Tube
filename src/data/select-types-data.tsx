@@ -1,7 +1,7 @@
-import { ShareIcon } from "@/assets/icons";
+import { GoogleIcon, ShareIcon } from "@/assets/icons";
 import { Separator } from "@/components/ui/separator";
 import { selectItemType, VideoType } from "@/types";
-import { ArrowDownToLine, Ban, Bookmark, ChevronFirst, CircleMinus, CircleX, Clock, ClosedCaption, Flag, ListVideo, MessageSquareWarning, Pencil, TextAlignStart, Trash, Vibrate } from "lucide-react";
+import { ArrowDownToLine, Ban, Bookmark, BookUser, ChevronFirst, CircleDollarSign, CircleMinus, CircleQuestionMark, CircleStar, CircleX, Clock, ClosedCaption, Flag, Globe, Keyboard, Languages, ListVideo, LogIn, MessageSquareWarning, Moon, Pencil, Settings, ShieldUser, TextAlignStart, Trash, UserCog, Vibrate } from "lucide-react";
 
 export const selectClassic = [
   {
@@ -224,4 +224,97 @@ export const AllSelectsForVideo: { type: VideoType; data: selectItemType[] }[] =
     type: "liked",
     data: selectLiked
   },
+]
+
+export const profileSelectData = [
+  {
+    label: "Account Google",
+    icon: <GoogleIcon />,
+    chevron: false
+  },
+  {
+    label: "Change account",
+    icon: <BookUser />,
+    chevron: true
+  },
+  {
+    label: "Logout",
+    icon: <LogIn />,
+    chevron: false
+  },
+  {
+    label: "separator",
+    icon: <Separator />,
+    chevron: false
+  },
+  {
+    label: "Creative Studio",
+    icon: <CircleStar />,
+    chevron: false
+  },
+  {
+    label: "Purchases and paid subscriptions",
+    icon: <CircleDollarSign />,
+    chevron: false
+  },
+  {
+    label: "separator",
+    icon: <Separator />,
+    chevron: false
+  },
+  {
+    label: "Your data in YouTube",
+    icon: <ShieldUser />,
+    chevron: false
+  },
+  {
+    label: "Theme: Device theme",
+    icon: <Moon />,
+    chevron: true
+  },
+  {
+    label: "Language: English",
+    icon: <Languages />,
+    chevron: true
+  },
+  {
+    label: "Safe mode: Off",
+    icon: <UserCog />,
+    chevron: true
+  },
+  {
+    label: "Country: United States",
+    icon: <Globe />,
+    chevron: true
+  },
+  {
+    label: "Fast keyboard",
+    icon: <Keyboard />,
+    chevron: false
+  },
+  {
+    label: "separator",
+    icon: <Separator />,
+    chevron: false
+  },
+  {
+    label: "Settings",
+    icon: <Settings />,
+    chevron: false
+  },
+  {
+    label: "separator",
+    icon: <Separator />,
+    chevron: false
+  },
+  {
+    label: "Reference",
+    icon: <CircleQuestionMark />,
+    chevron: false
+  },
+  {
+    label: "Send feedback",
+    icon: <MessageSquareWarning />,
+    chevron: false
+  }
 ]

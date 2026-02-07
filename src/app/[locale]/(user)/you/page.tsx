@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button"
 import { ArrowDownToLine, BookUser, ChevronRight, Film, SquarePlay } from "lucide-react"
 import { videos } from "@/data/videos"
 import { youPageTabs } from "@/data/navbar-tabs"
+import { playlists } from "@/data/playlists"
 
 const history = videos(15)
-const playslists = videos(9)
+const playslists = playlists(9)
 const seeLater = videos(12)
 const liked = videos(30)
 
@@ -52,7 +53,7 @@ const YouPage = () => {
       </div>
       {/* sections */}
       <ReusubleSection title="History" link="/history" videos={history} />
-      <ReusubleSection title="Playlists" link="/playlists" videos={playslists} />
+      <ReusubleSection title="Playlists" link="/playlists" videos={playslists} type="playlist" />
       <ReusubleSection title="See later" link="/seelater" videos={seeLater} />
       <ReusubleSection title="Liked" link="/liked" videos={liked} />
 

@@ -8,11 +8,11 @@ import { Dot } from "lucide-react"
 const MySubscriptions = () => {
     return (
         <div className="px-2 2xm:px-18 2md:px-23">
-            <h1 className="text-[22px] 2xm:text-[36px] leading-12.5 font-bold pt-6 pb-1">Channels you're subscribed to</h1>
+            <h1 className="text-[22px] 2xm:text-[36px] leading-12.5 font-bold sm:pt-6 pb-1">Channels you're subscribed to</h1>
             <MysubscriptionsSelect />
             <div className="flex flex-col gap-4 mt-6">
-                {sidebarSubscriptionsSection.map((subscription: SubscriptionItem | undefined, index: number) => (
-                    <div key={index} className="flex items-center justify-between gap-4">
+                {sidebarSubscriptionsSection.map((subscription: SubscriptionItem) => (
+                    <div key={subscription.slug} className="flex items-center justify-between gap-4">
                         <div className="flex items-center gap-3">
                             <Avatar icon={subscription?.logo ?? ""} className="w-10 2xm:w-25 2md:w-34" />
                             <div className="2xm:pb-4">

@@ -4,13 +4,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useRef } from "react";
 import { ReusubleVideosSwiper } from "../swiper";
 import { Link } from "@/i18n/navigation";
-import { Video } from "@/types";
+import { Playlist, Video } from "@/types";
 type SectionProps = {
   title: string
   link: string
-  videos: Video[]
+  videos: Video[] | Playlist[]
+  type?: "playlist" | "classic"
 }
-export const ReusubleSection = ({ videos, link, title }: SectionProps) => {
+export const ReusubleSection = ({ videos, link, title, type = "classic" }: SectionProps) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
@@ -35,7 +36,7 @@ export const ReusubleSection = ({ videos, link, title }: SectionProps) => {
       </div>
 
       {/* swiper */}
-      <ReusubleVideosSwiper prevRef={prevRef} nextRef={nextRef} videos={videos} />
+      <ReusubleVideosSwiper prevRef={prevRef} nextRef={nextRef} videos={videos} type={type} />
     </section>
   )
 }
