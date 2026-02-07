@@ -8,7 +8,7 @@ const playlistSection = playlists(9)
 
 const Home = () => {
   return (
-    <div className="max-w-545 mx-auto xm:pr-4 xm:pl-4 sm:pl-6 sm:pr-6 2md:pl-0! 2xl:pr-10 sm:pt-17">
+    <div className="grid gap-x-5 gap-y-7.5 xm:gap-y-10 max-w-545 mx-auto xm:pr-4 xm:pl-4 sm:pl-6 sm:pr-6 2md:pl-0! 2xl:pr-10 sm:pt-17">
       <VideosSection videos={videosSection_1} />
       <ShortsSection />
       <PlaylistsSection playlists={playlistSection} />

@@ -10,7 +10,7 @@ const videosSection_1 = videos(10)
 const SubscriptionsPage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   return (
-    <div className="max-w-545 mx-auto xm:pr-4 xm:pl-4 sm:pl-6 sm:pr-6 2md:pl-0! 2xl:pr-10 pt-30 2m:pt-14">
+    <div className="max-w-545 mx-auto xm:pr-4 xm:pl-4 sm:pl-6 sm:pr-6 2md:pl-0! 2xl:pr-10 pt-30 md:pt-35 lg:pt-15">
       <div className="2xm:flex items-center hidden justify-between mb-5">
         <h2 className="text-2xl 2md:text-[36px] font-bold">New</h2>
         <div className="flex items-center gap-2">
