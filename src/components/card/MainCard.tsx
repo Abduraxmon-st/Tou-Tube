@@ -27,7 +27,7 @@ export const MainCard = ({
         </div>
 
         <div className="flex gap-3 py-2 sm:p-2 3md:p-3">
-          {ownerVisible && <Avatar icon={video.avatar_image} className="size-9" />}
+          {ownerVisible && <Avatar icon={video.avatar_image} className="size-9 ml-2 xm:ml-0" />}
           <div className="flex-1 relative pr-4 2xm:pr-6">
             <h2 className="font-medium line-clamp-2">{video.title}</h2>
             <p className="hidden xm:block text-thirdColor text-sm">{video.owner}</p>

@@ -41,7 +41,7 @@ export const ShortsSection = () => {
           <p className="flex-1 text-[20px] font-bold">Shorts</p>
           <VideosSelect videoType="all-shorts" align="end" />
         </div>
-        <div className="grid grid-cols-2 gap-2 xm:gap-y-10 w-full px-3 2xm:px-0">
+        <div className="grid grid-cols-2 gap-2 xm:gap-y-10 w-full px-4 xm:px-0">
           {shortsSection_3.map((shorts) => (
             <ShortsCardMobile key={shorts.id} short={shorts} />
           ))}
