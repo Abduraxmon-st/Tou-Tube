@@ -25,9 +25,9 @@ export const ProfileSelect = () => {
           <Separator />
           <div className='grid'>
             {
-              profileSelectData.map((item) => (
+              profileSelectData.map((item, i) => (
                 <Button
-                  key={item.label}
+                  key={item.label + i}
                   variant="iconVariant"
                   className={`w-full! justify-start gap-3 font-normal rounded-none! ${item.label === "separator" ? "h-max! px-0! bg-transparent! cursor-default" : "h-10! px-4! active:bg-thirdColor/20!"}`} >
                   {item.icon}

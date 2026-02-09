@@ -77,7 +77,7 @@ export const ShortsSwiper = () => {
 
               {/* main shection */}
               < div className="flex w-max h-full mx-auto" >
-                <div className="relative h-full bg-amber-400 rounded-xl overflow-hidden">
+                <div className="relative h-full rounded-xl overflow-hidden">
                   <Image src={short.cover_image} width={480} height={960} alt={short.title} className="w-full h-full object-cover" />
                   <div className="absolute left-0 bottom-0 h-25 w-full z-2 bg-linear-to-b from-transparent to-black/70" />
                   {/* left section mobile */}
