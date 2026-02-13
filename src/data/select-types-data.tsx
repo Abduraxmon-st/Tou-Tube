@@ -1,7 +1,7 @@
 import { GoogleIcon, ShareIcon } from "@/assets/icons";
 import { Separator } from "@/components/ui/separator";
 import { selectItemType, VideoType } from "@/types";
-import { ArrowDownToLine, Ban, Bookmark, BookUser, ChevronFirst, CircleDollarSign, CircleMinus, CircleQuestionMark, CircleStar, CircleX, Clock, ClosedCaption, Flag, Globe, Keyboard, Languages, ListVideo, LogIn, MessageSquareWarning, Moon, Pencil, Settings, ShieldUser, TextAlignStart, Trash, UserCog, Vibrate } from "lucide-react";
+import { ArrowDownToLine, Ban, Bookmark, BookUser, ChevronFirst, CircleDollarSign, CircleMinus, CircleQuestionMark, CircleStar, CircleX, Clock, ClosedCaption, Flag, Globe, Keyboard, Languages, ListVideo, LogIn, MessageSquareWarning, Moon, Pause, Pencil, Settings, ShieldUser, TextAlignStart, Trash, UserCog, Vibrate } from "lucide-react";
 
 export const selectClassic = [
   {
@@ -317,4 +317,22 @@ export const profileSelectData = [
     icon: <MessageSquareWarning />,
     chevron: false
   }
+]
+
+export const historySelectData = [
+  {
+    label: "Delete from history",
+    icon: <Trash />
+  },
+  {
+    label: "Don't save history",
+    icon: <Pause />
+  },
+  {
+    label: "History settings",
+    icon: <Settings />
+  }
+]
+export const hisorySettingsSelectData = [
+  "Comments", "Records", "Chat"
 ]

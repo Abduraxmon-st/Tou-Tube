@@ -1,5 +1,5 @@
 "use client"
-import { navbarTabs } from "@/data/navbar-tabs"
+import { navbarTabs } from "@/data/tabs"
 import { Button } from "../ui/button"
 import useStore from "@/context/store"
 import { Compass } from "lucide-react"

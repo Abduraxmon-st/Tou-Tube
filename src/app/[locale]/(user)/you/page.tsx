@@ -4,7 +4,7 @@ import { ReusubleSection } from "@/components/section"
 import { Button } from "@/components/ui/button"
 import { ArrowDownToLine, BookUser, ChevronRight, Film, SquarePlay } from "lucide-react"
 import { videos } from "@/data/videos"
-import { youPageTabs } from "@/data/navbar-tabs"
+import { youPageTabs } from "@/data/tabs"
 import { playlists } from "@/data/playlists"
 
 const history = videos(15)

@@ -1,5 +1,5 @@
 "use client"
-import { subscriptionsTabs } from "@/data/navbar-tabs"
+import { subscriptionsTabs } from "@/data/tabs"
 import useStore from "@/context/store"
 import { Tabs, TabsList, TabsTrigger } from "../ui/tabs"
 import { SettingsSheet } from "../sheet"

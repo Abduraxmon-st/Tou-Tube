@@ -47,32 +47,32 @@ export const youPageTabs = [
 
 export const subscriptionsTabs = [
   {
-    label:"All", 
-    active:true
+    label: "All",
+    active: true
   },
   {
-    label:"For today" 
+    label: "For today"
   },
   {
-    label:"Video" 
+    label: "Video"
   },
   {
-    label:"Shorts" 
+    label: "Shorts"
   },
   {
-    label:"Now on air" 
+    label: "Now on air"
   },
   {
-    label:"Podcasts" 
+    label: "Podcasts"
   },
   {
-    label:"Records" 
+    label: "Records"
   },
   {
-    label:"Not examined"
+    label: "Not examined"
   },
   {
-    label:"Not viewed" 
+    label: "Not viewed"
   }
 ]
 
@@ -91,5 +91,20 @@ export const playlistTabs = [
   },
   {
     label: "Saved"
+  }
+]
+
+export const historyTabs = [
+  {
+    label: "All",
+  },
+  {
+    label: "Video"
+  },
+  {
+    label: "Shorts"
+  },
+  {
+    label: "Music"
   }
 ]
