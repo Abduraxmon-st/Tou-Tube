@@ -48,14 +48,20 @@ export const ReusubleVideosSwiper = ({ prevRef, nextRef, videos, type = "classic
             slidesPerGroup: 5
           }
         }}
-        className="w-full p-0! px-4! 2xm:px-0!"
+        className="w-full p-0! px-4! 2xm:px-0! pt-4!"
       >
         {
           videos.map((video) => (
             <SwiperSlide key={video.id}>
               {
                 type === "classic" ? (
-                  <MainCard video={video as Video} hover={false} videoType="history" ownerVisible={false} onHome={false} />
+                  <MainCard
+                    video={video as Video}
+                    hover={false}
+                    videoType="history"
+                    ownerVisible={false}
+                    onHome={false}
+                    buttonClass="-right-2! bottom-11!" />
                 ) : (
                   <PlaylistCard playlist={video as Playlist} hover={false} />
                 )

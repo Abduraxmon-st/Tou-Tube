@@ -18,7 +18,7 @@ export const ReusubleSection = ({ videos, link, title, type = "classic" }: Secti
   return (
     <section className="pt-6">
       {/* top navigation */}
-      <div className="flex items-center justify-between ml-2 mb-4">
+      <div className="flex items-center justify-between ml-2">
         <h3 className="text-[20px] font-bold pl-4 2xm:pl-0">{title}</h3>
         <div className="flex gap-2 pr-4 2xm:pr-0">
           <Link href={link}>

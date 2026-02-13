@@ -5,13 +5,13 @@ import Image from "next/image"
 import { VideosSelect } from "../select"
 import { Link } from "@/i18n/navigation"
 import { slugify } from "@/lib/slugify"
-import { useLocale } from "next-intl"
 type MainCardProps = {
   video: Video,
   hover?: boolean,
   videoType?: VideoType,
   ownerVisible?: boolean,
-  onHome?: boolean
+  onHome?: boolean,
+  buttonClass?: string,
 }
 export const MainCard = ({
   video,
@@ -19,11 +19,13 @@ export const MainCard = ({
   videoType = "classic",
   ownerVisible = true,
   onHome = true,
+  buttonClass
 }: MainCardProps) => {
   return (
-    <Link href={`/${slugify(video.title)}`}>
-      <Card className="relative bg-transparent border-0 py-0! gap-0 shadow-none rounded-none text-secondColor cursor-pointer group">
-        <div className={`absolute z-3 size-full scale-100 group-hover:scale-x-106 group-hover:scale-y-108  ${hover && video.hover_color} rounded-xl transition-all duration-300 ease-in-out`} />
+    <Card className="relative bg-transparent border-0 py-0! gap-0 shadow-none rounded-none text-secondColor cursor-pointer group">
+      <div className={`absolute z-3 size-full scale-100 group-hover:scale-x-106 group-hover:scale-y-108  ${hover && video.hover_color} rounded-xl transition-all duration-300 ease-in-out`} />
+      <VideosSelect videoType={videoType} buttonClass={`absolute bottom-5 xm:bottom-10 right-0 sm:-right-2 z-10 ${buttonClass}`} />
+      <Link href={`/${slugify(video.title)}`}>
         <div className="relative z-4">
           <div className={`relative aspect-video overflow-hidden ${!onHome && "rounded-md!"} sm:rounded-xl`}>
             <Image loading="lazy" width={1024} height={480} src={video.cover_image} alt={video.title} />
@@ -35,7 +37,6 @@ export const MainCard = ({
             <div className="flex-1 relative pr-4 2xm:pr-6">
               <h2 className="font-medium line-clamp-2">{video.title}</h2>
               <p className="hidden xm:block text-thirdColor text-sm">{video.owner}</p>
-              <VideosSelect videoType={videoType} buttonClass="absolute -top-2 right-0 sm:-right-5.5" />
               <div className="text-thirdColor text-sm xm:hidden! line-clamp-1">
                 <span className="text-thirdColor text-sm">{video.owner}</span>
                 <span>{" "}•{" "}</span>
@@ -51,7 +52,7 @@ export const MainCard = ({
             </div>
           </div>
         </div>
-      </Card>
-    </Link>
+      </Link>
+    </Card>
   )
 }

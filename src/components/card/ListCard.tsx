@@ -10,8 +10,9 @@ interface ListCardProps {
   ownerVisible?: boolean,
   video: Video,
   coverWidth?: string,
+  descVisible?: boolean
 }
-export const ListCard = ({ videoType = "classic", ownerVisible = true, video, coverWidth }: ListCardProps) => {
+export const ListCard = ({ videoType = "classic", ownerVisible = true, video, coverWidth, descVisible = true }: ListCardProps) => {
   return (
     <Link href={`/${slugify(video.title)}`}>
       <Card className="relative bg-transparent border-0 py-0! gap-0 shadow-none rounded-none text-secondColor cursor-pointer">
@@ -39,9 +40,9 @@ export const ListCard = ({ videoType = "classic", ownerVisible = true, video, co
                 <span className="text-thirdColor text-xs font-medium">{video.owner}</span>
               </div>
             }
-            <span className="hidden xm:block text-thirdColor text-sm line-clamp-2 mt-auto">
+            {descVisible && <span className="hidden xm:block text-thirdColor text-sm line-clamp-2 mt-auto">
               {video.description}
-            </span>
+            </span>}
           </div>
         </div>
       </Card>

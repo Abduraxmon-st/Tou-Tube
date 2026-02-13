@@ -4,13 +4,15 @@ import { createJSONStorage, persist } from "zustand/middleware";
 
 export interface Store {
   sidebarToggle: boolean;
-  setSidebarToggle: (value: boolean) => void;
   microToggle: boolean;
-  setMicroToggle: (value: boolean) => void;
   inShorts: boolean;
-  setInShorts: (value: boolean) => void;
   inSubSlug: boolean;
+  inVideoPlay: boolean;
+  setSidebarToggle: (value: boolean) => void;
+  setMicroToggle: (value: boolean) => void;
+  setInShorts: (value: boolean) => void;
   setInSubSlug: (value: boolean) => void;
+  setInVideoPlay: (value: boolean) => void;
 }
 
 const useStore = create<Store>()(
@@ -20,9 +22,13 @@ const useStore = create<Store>()(
       microToggle: false,
       inShorts: false,
       inSubSlug: false,
+      inVideoPlay: false,
 
       setInShorts: (inShorts) =>
         set({ inShorts }),
+
+      setInVideoPlay: (inVideoPlay) =>
+        set({ inVideoPlay }),
 
       setSidebarToggle: (sidebarToggle) =>
         set({ sidebarToggle }),

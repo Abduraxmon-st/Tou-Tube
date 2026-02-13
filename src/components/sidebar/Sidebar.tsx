@@ -6,17 +6,17 @@ import { SidebarSheet } from "../sheet"
 import { isNotDescktop } from "@/constants"
 
 export const Sidebar = () => {
-  const { sidebarToggle } = useStore()
-  if (isNotDescktop) {
+  const { sidebarToggle, inVideoPlay } = useStore()
+  if (isNotDescktop || inVideoPlay) {
     return (
       <>
         <SidebarSheet />
-        <SidebarClosed />
+        <SidebarClosed inVideoPlay={inVideoPlay} />
       </>
     )
   } else {
     if (sidebarToggle) {
       return <SidebarOpen />
-    } else return <SidebarClosed />
+    } else return <SidebarClosed inVideoPlay={inVideoPlay} />
   }
 }
