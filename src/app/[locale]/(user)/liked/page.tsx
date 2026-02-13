@@ -1,4 +1,5 @@
 import { ListCard } from "@/components/card/ListCard"
+import { RightVideoSection } from "@/components/section/RightVideoSection"
 import { ReusableTabs } from "@/components/tabs"
 import { historyTabs } from "@/data/tabs"
 import { videos } from "@/data/videos"
@@ -6,7 +7,9 @@ const likedVideos = videos(15)
 const LikedPage = () => {
   return (
     <div className="relative max-w-7xl mx-auto lg:grid grid-cols-3 gap-4 lg:pt-5">
-      <div className="col-span-1 bg-amber-300 h-100 lg:sticky top-5"></div>
+      <div className="col-span-1 lg:sticky lg:h-[calc(100vh-120px)] top-5">
+        <RightVideoSection video={likedVideos[0]} title="Liked" videoLength={likedVideos.length}/>
+      </div>
       <div className="col-span-2">
         <div className="lg:sticky z-10 top-0 pl-6 pt-4 pb-2 w-full backdrop-blur-3xl bg-mainColor/80">
           <ReusableTabs tabs={historyTabs} defaultTab="All" />
