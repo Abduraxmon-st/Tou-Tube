@@ -15,10 +15,17 @@ const SeeLaterPage = () => {
 
     const swapy = createSwapy(containerRef.current, {
       animation: "dynamic",
+      autoScrollOnDrag: true,
       dragAxis: "y",
     });
-
+    swapy.onSwapStart(() => {
+      document.body.style.overflow = "hidden";
+    });
+    swapy.onSwapEnd(() => {
+      document.body.style.overflow = "auto";
+    });
     return () => {
+      document.body.style.overflow = "auto";
       swapy.destroy();
     };
   }, []);
