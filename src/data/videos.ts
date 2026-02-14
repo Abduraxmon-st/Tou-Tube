@@ -12,7 +12,7 @@ export const getColorByIndex = (i: number) => {
   return hoverBgMap[i % hoverBgMap.length];
 };
 
-export function videos(length: number) {
+export function videos(length: number, commentsLength = 5) {
   return Array.from({ length: length }, (_, i) => ({
     id: (i + 1) * 656,
 
@@ -42,41 +42,36 @@ export function videos(length: number) {
       "#javascript",
     ],
 
-    comments: [
-      {
-        avatar_image: "https://i.pravatar.cc/40?img=12",
-        owner: "Frontend Guy",
-        date: "2 days ago",
-        likes: "120",
-        comment: "Judayam foydali video bo‘ldi 🔥 Rahmat!",
-        liked: true,
+    comments: Array.from({ length: commentsLength }, (_, j) => ({
+      avatar_image: `https://picsum.photos/seed/video${j}/640/360`,
+      owner: ["Frontend Guy", "React Fan", "JS Learner", "Code Master", "Dev Enthusiast"][j % 5],
+      date: `${Math.floor(Math.random() * 10 + 1)} days ago`,
+      likes: `${Math.floor(Math.random() * 100 + 10)}`,
+      comment: [
+        "Great video! Learned a lot.",
+        "Can you make a video about state management?",
+        "I love the tips you shared, very useful!",
+        "The part about performance optimization was eye-opening.",
+        "Thanks for sharing your knowledge with us!",
+      ][j % 5],
+      liked: true,
 
-        answers: [
-          {
-            avatar_image: "https://i.pravatar.cc/40?img=32",
-            owner: "Namdr Dev",
-            date: "1 day ago",
-            likes: "45",
-            comment: "Xursandman foydali bo‘lganidan 🙌",
-          },
-          {
-            avatar_image: "https://i.pravatar.cc/40?img=45",
-            owner: "JS Learner",
-            date: "1 day ago",
-            likes: "18",
-            comment: "Keyingi videoni kutyapmiz 👀",
-          },
-        ],
-      },
-      {
-        avatar_image: "https://i.pravatar.cc/40?img=22",
-        owner: "React Fan",
-        date: "3 days ago",
-        likes: "76",
-        comment: "Next.js bo‘yicha alohida playlist qiling!",
-        liked: false,
-        answers: [],
-      },
-    ],
+      answers: [
+        {
+          avatar_image: "https://i.pravatar.cc/40?img=32",
+          owner: "Namdr Dev",
+          date: "1 day ago",
+          likes: "45",
+          comment: "Xursandman foydali bo‘lganidan 🙌",
+        },
+        {
+          avatar_image: "https://i.pravatar.cc/40?img=45",
+          owner: "JS Learner",
+          date: "1 day ago",
+          likes: "18",
+          comment: "Keyingi videoni kutyapmiz 👀",
+        },
+      ],
+    }))
   }));
 } 
