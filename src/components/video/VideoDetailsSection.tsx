@@ -3,7 +3,7 @@ import { MessagesSquare } from "lucide-react"
 import { useState } from "react"
 import { Button } from "../ui/button"
 interface VideoDetailsSectionProps {
-  video: Video
+  video: Video | null
   chatOpen: boolean
   setChatOpen: (open: boolean) => void
 }
@@ -13,11 +13,11 @@ export const VideoDetailsSection = ({ video, chatOpen, setChatOpen }: VideoDetai
     <div className="flex gap-3 flex-wrap mt-3 mx-4 lg:mx-0">
       <button className={`relative p-3 bg-buttonBgColor rounded-xl text-sm text-start ${detailOpen ? "w-full" : "xl:w-1/2"}`} onClick={() => setDetailOpen(!detailOpen)}>
         <div className="flex gap-1">
-          <span>{video.views} views</span>
-          <span>{video.subDate}</span>
+          <span>{video?.views} views</span>
+          <span>{video?.subDate}</span>
         </div>
         <p>
-          {video.description}
+          {video?.description}
         </p>
         <div className={`${detailOpen ? "relative w-max" : "absolute bottom-1 right-1"} flex items-center justify-center p-2 text-sm`}>
           {!detailOpen && <div className="w-10 h-5 bg-linear-to-r from-transparent to-buttonBgColor" />}

@@ -85,7 +85,7 @@ export default function UserLayout({
             <Sidebar />
           </div>
         </div>
-        <div ref={contentRef} className={`relative z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto  2md:pl-6 ${!inShorts && "pt-14 pb-14 2md:pb-0"}`}>
+        <div ref={contentRef} className={`relative z-9 flex-1 h-max max-h-dvh w-full overflow-y-auto 2md:pl-6 ${!inShorts && "pt-14 pb-14 2md:pb-0"}`}>
           {children}
         </div>
       </div>

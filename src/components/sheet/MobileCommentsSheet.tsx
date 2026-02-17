@@ -14,19 +14,19 @@ import { CommentCard } from "../card"
 import { Avatar } from "../avatar"
 import { Input } from "../ui/input"
 
-export const MobileCommentsSection = ({ comments, ownerAvatar }: { comments: Comment[], ownerAvatar: string }) => {
-
+export const MobileCommentsSection = ({ comments, ownerAvatar }: { comments: Comment[] | undefined, ownerAvatar: string | undefined }) => {
+  const comment = comments ? comments[0] : null
   return (
     <Sheet>
       <SheetTrigger asChild className="mt-4 mx-4 pt-2 pb-3 px-3 rounded-lg bg-buttonBgColor">
         <div className="flex flex-col gap-2">
           <div className="flex gap-1.5">
             <p className="font-medium">Comments</p>
-            <span className="text-thirdColor">{comments.length}</span>
+            <span className="text-thirdColor">{comments?.length}</span>
           </div>
           <div className="flex gap-2 items-center">
-            <Avatar icon={comments[0].avatar_image} className="size-7.5!" />
-            <p className="text-sm line-clamp-1">{comments[0].comment}</p>
+            <Avatar icon={comment?.avatar_image ?? ""} className="size-7.5!" />
+            <p className="text-sm line-clamp-1">{comment?.comment ?? ""}</p>
           </div>
         </div>
       </SheetTrigger>
@@ -49,14 +49,14 @@ export const MobileCommentsSection = ({ comments, ownerAvatar }: { comments: Com
         </SheetHeader>
         <div className="flex-1 flex flex-col gap-4 overflow-auto pl-3 pr-4 mt-4">
           {
-            comments.map((comment) => (
+            comments?.map((comment) => (
               <CommentCard key={comment.likes} comment={comment} />
             ))
           }
         </div>
         <SheetFooter className="flex-row items-center gap-3 px-3 py-2 border-t border-buttonBgColor">
-          <Avatar icon={comments[0].avatar_image} className="size-6!" />
-          <Input type="text" className="border-0 bg-buttonBgColor rounded-[4px] placeholder:text-thirdColor" placeholder="Enter comment"/>
+          <Avatar icon={ownerAvatar ?? ""} className="size-6!" />
+          <Input type="text" className="border-0 bg-buttonBgColor rounded-[4px] placeholder:text-thirdColor" placeholder="Enter comment" />
         </SheetFooter>
       </SheetContent>
     </Sheet>
