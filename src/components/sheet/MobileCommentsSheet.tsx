@@ -29,7 +29,7 @@ export const MobileCommentsSection = ({ comments }: { comments: Comment[] }) => 
           </div>
         </div>
       </SheetTrigger>
-      <SheetContent autoFocus={false} overlay={false} showCloseButton={false} side="bottom" className="max-h-[calc(100vh-(100vw*9/16)-2px)] h-full gap-0!  outline-0 bg-mainColor border-0 rounded-t-lg">
+      <SheetContent autoFocus={false} overlay={false} showCloseButton={false} side="bottom" className="max-h-[calc(100dvh-(100vw*9/16)-2px)] h-full gap-0!  outline-0 bg-mainColor border-0 rounded-t-lg">
         <div className="w-[12%] h-1 mx-auto mt-2 bg-buttonBgColor rounded-full" />
         <SheetHeader className="sticky top-0 flex-row items-center justify-between gap-0! p-0! border-b border-buttonBgColor pl-4!">
           <SheetTitle className="text-secondColor text-2xl font-semibold">
