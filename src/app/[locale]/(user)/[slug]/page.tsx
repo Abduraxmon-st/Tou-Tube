@@ -15,11 +15,12 @@ const VideoPlayPage = () => {
   const { setInVideoPlay, setSidebarToggle } = useStore();
   const [chatOpen, setChatOpen] = useState(false)
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
     setInVideoPlay(true);
     setSidebarToggle(false)
     return () => {
       setInVideoPlay(false);
-      setSidebarToggle(true)
+      setSidebarToggle(false)
     }
   }, [videoSlug, setInVideoPlay]);
 
