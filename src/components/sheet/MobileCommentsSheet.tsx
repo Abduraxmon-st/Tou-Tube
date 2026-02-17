@@ -36,10 +36,10 @@ export const MobileCommentsSection = ({ comments }: { comments: Comment[] }) => 
             Comments
           </SheetTitle>
           <div className="flex gap-2">
-            <Button variant="iconVariant">
+            <Button variant="iconVariant" autoFocus={false}>
               <Info />
             </Button>
-            <SheetClose>
+            <SheetClose autoFocus={false}>
               <div className="p-2 h-fit">
                 <X />
               </div>
