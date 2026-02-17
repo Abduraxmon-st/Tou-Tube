@@ -31,22 +31,22 @@ const VideoPlayPage = () => {
         <MainVideo video={video} />
         <div className="aspect-video h-max w-full lg:hidden -mt-14" />
         <div>
-          <h1 className="mt-4 text-xl font-bold line-clamp-1 px-4 lg:px-0">{video.title}</h1>
-          <p className="md:hidden text-sm text-thirdColor px-4 lg:px-0 mt-1 line-clamp-1">@{video.owner} {video.views} views {video.date}</p>
+          <h1 className="mt-4 text-xl font-bold line-clamp-1 px-3 lg:px-0">{video.title}</h1>
+          <p className="md:hidden text-sm text-thirdColor px-3 lg:px-0 mt-1 line-clamp-1">@{video.owner} {video.views} views {video.date}</p>
         </div>
         <div className="w-full overflow-auto">
-          <div className="flex flex-row md:flex-col xl:flex-row w-max gap-2 md:gap-4 justify-between md:w-full mt-3 px-4 lg:px-0">
+          <div className="flex flex-row md:flex-col xl:flex-row w-max gap-2 md:gap-4 justify-between md:w-full mt-3 px-3 lg:px-0">
             <VideoOwnerSection video={video} />
             <VideoButtons like={video.likes} />
           </div>
         </div>
         {
           isTablet ?
-            <MobileCommentsSection comments={video.comments} />
+            <MobileCommentsSection comments={video.comments} ownerAvatar={video.avatar_image}/>
             : <VideoDetailsSection video={video} chatOpen={chatOpen} setChatOpen={setChatOpen} />
         }
         <CommentsSection comments={video.comments} avatar={video.avatar_image} />
-        <div className="hidden lg:flex flex-col gap-4 px-4 lg:px-0">
+        <div className="hidden lg:flex flex-col gap-4 px-3 lg:px-0">
           {
             video.comments.map((comment) => (
               <CommentCard key={comment.likes} comment={comment} />
