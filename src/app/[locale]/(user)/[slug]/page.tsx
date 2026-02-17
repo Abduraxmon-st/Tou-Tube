@@ -8,7 +8,7 @@ import { videos } from "@/data/videos";
 import { slugify } from "@/lib/slugify";
 import { Video } from "@/types";
 import { useParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 const othervideos = videos(30)
 const VideoPlayPage = () => {
   const params = useParams();
@@ -16,7 +16,6 @@ const VideoPlayPage = () => {
   const { setInVideoPlay, setSidebarToggle } = useStore();
   const [chatOpen, setChatOpen] = useState(false)
   const [video, setVideo] = useState<Video | null>(null)
-  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     console.log("effect");
@@ -31,15 +30,9 @@ const VideoPlayPage = () => {
       setSidebarToggle(false)
     }
   }, [videoSlug, video, setInVideoPlay]);
-  useEffect(() => {
-    containerRef.current?.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
-  }, [video, videoSlug])
 
   return (
-    <div className="flex flex-col lg:flex-row gap-4 lg:pt-4 pb-4 overflow-auto">
+    <div className="flex flex-col lg:flex-row gap-4 lg:pt-4 pb-4">
       {/* Main Video */}
       <div className="flex-1 relative">
         <MainVideo video={video} />
