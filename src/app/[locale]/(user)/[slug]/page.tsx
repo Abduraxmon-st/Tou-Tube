@@ -1,7 +1,8 @@
 "use client"
 import { CommentCard, ListCard, MainCard } from "@/components/card";
+import { MobileCommentsSection } from "@/components/sheet";
 import { ChatPanel, CommentsSection, MainVideo, VideoButtons, VideoDetailsSection, VideoOwnerSection } from "@/components/video";
-import { isMobile, isTablet } from "@/constants";
+import { isTablet } from "@/constants";
 import useStore from "@/context/store";
 import { videos } from "@/data/videos";
 import { useParams } from "next/navigation";
@@ -11,23 +12,26 @@ const video = videos(1)[0]
 const VideoPlayPage = () => {
   const params = useParams();
   const videoSlug = params.slug as string;
-  const { setInVideoPlay } = useStore();
+  const { setInVideoPlay, setSidebarToggle } = useStore();
   const [chatOpen, setChatOpen] = useState(false)
   useEffect(() => {
     setInVideoPlay(true);
+    setSidebarToggle(false)
     return () => {
       setInVideoPlay(false);
+      setSidebarToggle(true)
     }
   }, [videoSlug, setInVideoPlay]);
 
   return (
     <div className="flex flex-col lg:flex-row gap-4 lg:pt-4 pb-4">
       {/* Main Video */}
-      <div className="flex-1">
+      <div className="flex-1 relative">
         <MainVideo video={video} />
+        <div className="aspect-video h-max w-full lg:hidden -mt-14" />
         <div>
           <h1 className="mt-4 text-xl font-bold line-clamp-1 px-4 lg:px-0">{video.title}</h1>
-          <p className="text-sm text-thirdColor px-4 lg:px-0 mt-2 line-clamp-1">@{video.owner} {video.views} views {video.date}</p>
+          <p className="md:hidden text-sm text-thirdColor px-4 lg:px-0 mt-1 line-clamp-1">@{video.owner} {video.views} views {video.date}</p>
         </div>
         <div className="w-full overflow-auto">
           <div className="flex flex-row md:flex-col xl:flex-row w-max gap-2 md:gap-4 justify-between md:w-full mt-3 px-4 lg:px-0">
@@ -35,9 +39,13 @@ const VideoPlayPage = () => {
             <VideoButtons like={video.likes} />
           </div>
         </div>
-        {!isMobile && <VideoDetailsSection video={video} chatOpen={chatOpen} setChatOpen={setChatOpen} />}
+        {
+          isTablet ?
+            <MobileCommentsSection comments={video.comments} />
+            : <VideoDetailsSection video={video} chatOpen={chatOpen} setChatOpen={setChatOpen} />
+        }
         <CommentsSection comments={video.comments} avatar={video.avatar_image} />
-        <div className="hidden md:flex flex-col gap-4">
+        <div className="hidden lg:flex flex-col gap-4 px-4 lg:px-0">
           {
             video.comments.map((comment) => (
               <CommentCard key={comment.likes} comment={comment} />
@@ -48,7 +56,7 @@ const VideoPlayPage = () => {
 
       {/* Other videos */}
       {isTablet ? (
-        <div className="flex flex-col gap-5 lg:max-w-90 xl:max-w-104 w-full md:px-4 lg:pr-6!">
+        <div className="flex flex-col gap-5 w-full md:px-4">
           {
             othervideos.map((video) => (
               <MainCard
@@ -62,7 +70,7 @@ const VideoPlayPage = () => {
         </div>
       )
         : (
-          <div className="flex flex-col gap-2 max-w-90 xl:max-w-104 w-full pr-6">
+          <div className="flex flex-col gap-2 max-w-90 xl:max-w-107 w-full pr-6">
             {chatOpen && <ChatPanel setChatOpen={setChatOpen} />}
             {
               othervideos.map((video) => (
@@ -74,9 +82,10 @@ const VideoPlayPage = () => {
                   descVisible={false} />
               ))
             }
-          </div>)
+          </div>
+        )
       }
-    </div >
+    </div>
   )
 }
 export default VideoPlayPage

@@ -10,7 +10,7 @@ interface VideoDetailsSectionProps {
 export const VideoDetailsSection = ({ video, chatOpen, setChatOpen }: VideoDetailsSectionProps) => {
   const [detailOpen, setDetailOpen] = useState(false)
   return (
-    <div className="flex gap-3 flex-wrap mt-3">
+    <div className="flex gap-3 flex-wrap mt-3 mx-4 lg:mx-0">
       <button className={`relative p-3 bg-buttonBgColor rounded-xl text-sm text-start ${detailOpen ? "w-full" : "xl:w-1/2"}`} onClick={() => setDetailOpen(!detailOpen)}>
         <div className="flex gap-1">
           <span>{video.views} views</span>

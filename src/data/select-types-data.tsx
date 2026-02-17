@@ -191,6 +191,21 @@ export const selectLiked = [
   },
 ]
 
+export const selectComments = [
+  {
+    label: "Share",
+    icon: <ShareIcon />
+  },
+  {
+    label: "Complain",
+    icon: <Flag />
+  },
+  {
+    label: "Save",
+    icon: <Bookmark />
+  },
+]
+
 export const AllSelectsForVideo: { type: VideoType; data: selectItemType[] }[] = [
   {
     type: "classic",
@@ -224,6 +239,10 @@ export const AllSelectsForVideo: { type: VideoType; data: selectItemType[] }[] =
     type: "liked",
     data: selectLiked
   },
+  {
+    type: "comments",
+    data: selectComments
+  }
 ]
 
 export const profileSelectData = [

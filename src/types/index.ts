@@ -74,7 +74,8 @@ export type VideoType =
   | "history"
   | "playlist"
   | "see-later"
-  | "liked";
+  | "liked"
+  | "comments"
 
 export type VideoTypeProps = {
   videoType: VideoType;

@@ -14,7 +14,7 @@ export const CommentsSection = ({ comments, avatar }: { comments: Comment[], ava
     setCommentOpen(false)
   }
   return (
-    <div className="hidden md:block mt-6 pb-8">
+    <div className="hidden lg:block mt-6 pb-8 px-4 lg:px-0">
       <div className="flex gap-6 mb-6">
         <h3 className="text-xl font-bold">{comments.length} comments</h3>
         <div className="flex items-center gap-3 text-sm">

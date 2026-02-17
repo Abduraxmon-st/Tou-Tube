@@ -9,9 +9,11 @@ import { ArrowLeft } from "lucide-react"
 import { Button } from "../ui/button"
 import { isTablet } from "@/constants"
 import { MobileNavbar } from "./MobileNavbar"
+import useStore from "@/context/store"
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const { inVideoPlay } = useStore()
   if (isTablet) {
     if (open) {
       return (
@@ -21,7 +23,7 @@ export const Navbar = () => {
         </div>
       )
     } else {
-      return <MobileNavbar open={open} setOpen={setOpen} />
+      return !inVideoPlay ? <MobileNavbar open={open} setOpen={setOpen} /> : null
     }
   } else return (
     <div className="flex items-center justify-between px-2 sm:px-4 max-h-14">
