@@ -63,7 +63,7 @@ export const sidebarLinksSection_3 = [
   },
   {
     label: "Complaints",
-    path: "//",
+    path: "/complaints",
     icon: <Flag />
   },
   {
