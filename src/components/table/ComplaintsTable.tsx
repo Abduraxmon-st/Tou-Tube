@@ -6,7 +6,7 @@ export const ComplaintsTable = () => {
     return (
         <Table>
             <TableHeader>
-                <TableRow className="text-white!">
+                <TableRow className="text-white! hover:bg-transparent!">
                     <TableHead className="w-35">Type</TableHead>
                     <TableHead className="w-100">Content</TableHead>
                     <TableHead>Reason for complaint</TableHead>
@@ -15,8 +15,8 @@ export const ComplaintsTable = () => {
             </TableHeader>
             <TableBody>
                 {ComplaintsTableData.map((item) => (
-                    <TableRow key={item.id}>
-                        <TableCell className="font-medium flex items-center gap-2"><Video />Video</TableCell>
+                    <TableRow key={item.id} className="hover:bg-transparent!">
+                        <TableCell className="font-medium flex items-center gap-2 "><Video />Video</TableCell>
                         <TableCell className="w-100"><p>{item.content}</p> <span>{item.name}</span></TableCell>
                         <TableCell className="w-100"><p>{item.complaints}</p> <span>{item.date}</span></TableCell>
                         <TableCell className="w-100">{item.status}</TableCell>
